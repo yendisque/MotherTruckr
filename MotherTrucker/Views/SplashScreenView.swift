@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ContentView: View
+// Splash Screen
+struct SplashScreenView: View
 {
-    
     @State var animate = false
     @State var endSplash = false
     
@@ -17,17 +17,17 @@ struct ContentView: View
     {
         ZStack
         {
-            Home()
+            LoginView()
             
             ZStack
             {
-                Color("mg")
+                LinearGradient(gradient: Gradient(colors: [ Color(hex: 0x7BED9F), Color(hex: 0x07C656) ]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 
                 Image("Truck")
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: animate ? .fill : .fit)
-                    .frame(width: animate ? nil : 45, height: animate ? nil : 45)
+                    .frame(width: animate ? nil : 30, height: animate ? nil : 30)
                 
                 // scaling the view
                 .scaleEffect(animate ? 3 : 1)
@@ -56,28 +56,4 @@ struct ContentView: View
     }
 }
 
-struct ContentView_Previews: PreviewProvider
-{
-    static var previews: some View
-    {
-        ContentView()
-    }
-}
 
-//Home Screen
-
-struct Home: View
-{
-    var body: some View
-    {
-        VStack
-        {
-            HStack
-            {
-                Text("Home")
-                    
-            }
-            .navigationTitle("Home")
-        }
-    }
-}

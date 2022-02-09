@@ -8,10 +8,21 @@
 import SwiftUI
 
 @main
-struct MotherTruckerApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+struct MotherTruckerApp: App
+{
+    @StateObject var authentication = Authentication()
+    var body: some Scene
+    {
+        WindowGroup
+        {
+            if authentication.isValidated
+            {
+                HomeView()
+                    .environmentObject(authentication)
+            } else {
+                LoginView()
+                    .environmentObject(authentication)
+            }
         }
     }
 }
