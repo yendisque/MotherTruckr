@@ -19,8 +19,8 @@ struct LoginView: View
             Text("Welcome Back!")
                 .fontWeight(.bold)
                 .font(.largeTitle)
-                .offset(x: -100, y: -280)
                 .frame(width: 180, height: 150)
+                .offset(x: -100, y: -280)
 
             TextField("Email Address", text: $loginVM.credentials.email)
                 .keyboardType(.emailAddress)
@@ -70,8 +70,10 @@ struct LoginView: View
 }
 
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
+struct LoginView_Previews: PreviewProvider
+{
+    static var previews: some View
+    {
         LoginView()
     }
 }

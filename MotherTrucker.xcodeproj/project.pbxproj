@@ -13,6 +13,7 @@
 		020603FC27B18DB40033C4F3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020603FB27B18DB40033C4F3 /* LoginViewModel.swift */; };
 		020603FF27B18F980033C4F3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020603FE27B18F980033C4F3 /* LoginView.swift */; };
 		0206040127B193AF0033C4F3 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206040027B193AF0033C4F3 /* Authentication.swift */; };
+		0246FA5827B42B0200289FBE /* FirstLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0246FA5727B42B0200289FBE /* FirstLandingView.swift */; };
 		027DE62027B3100E005AFBEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027DE61F27B3100E005AFBEC /* HomeView.swift */; };
 		027DE62227B31942005AFBEC /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027DE62127B31942005AFBEC /* Shape.swift */; };
 		027DE62527B3198A005AFBEC /* Color Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027DE62427B3198A005AFBEC /* Color Extension.swift */; };
@@ -29,6 +30,7 @@
 		020603FB27B18DB40033C4F3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		020603FE27B18F980033C4F3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 		0206040027B193AF0033C4F3 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		0246FA5727B42B0200289FBE /* FirstLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLandingView.swift; sourceTree = "<group>"; };
 		027DE61F27B3100E005AFBEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		027DE62127B31942005AFBEC /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		027DE62427B3198A005AFBEC /* Color Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Extension.swift"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				02D3E26127AC42F600B5B8C1 /* SplashScreenView.swift */,
+				0246FA5727B42B0200289FBE /* FirstLandingView.swift */,
 				027DE61F27B3100E005AFBEC /* HomeView.swift */,
 				020603FE27B18F980033C4F3 /* LoginView.swift */,
 				020603FB27B18DB40033C4F3 /* LoginViewModel.swift */,
@@ -207,6 +210,7 @@
 				020603F627B18B460033C4F3 /* APIService.swift in Sources */,
 				02D3E26027AC42F600B5B8C1 /* MotherTruckerApp.swift in Sources */,
 				027DE62527B3198A005AFBEC /* Color Extension.swift in Sources */,
+				0246FA5827B42B0200289FBE /* FirstLandingView.swift in Sources */,
 				020603F827B18CDE0033C4F3 /* UIApplication + Extension.swift in Sources */,
 				0206040127B193AF0033C4F3 /* Authentication.swift in Sources */,
 			);
