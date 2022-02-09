@@ -20,6 +20,7 @@
 		02D3E26227AC42F600B5B8C1 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D3E26127AC42F600B5B8C1 /* SplashScreenView.swift */; };
 		02D3E26427AC42F700B5B8C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D3E26327AC42F700B5B8C1 /* Assets.xcassets */; };
 		02D3E26727AC42F700B5B8C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D3E26627AC42F700B5B8C1 /* Preview Assets.xcassets */; };
+		D9A3DF2827B38E5600CCE64E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3DF2727B38E5600CCE64E /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		02D3E26327AC42F700B5B8C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02D3E26627AC42F700B5B8C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		02D3E26D27AC4B9900B5B8C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D9A3DF2727B38E5600CCE64E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				027DE61F27B3100E005AFBEC /* HomeView.swift */,
 				020603FE27B18F980033C4F3 /* LoginView.swift */,
 				020603FB27B18DB40033C4F3 /* LoginViewModel.swift */,
+				D9A3DF2727B38E5600CCE64E /* ButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				027DE62027B3100E005AFBEC /* HomeView.swift in Sources */,
 				020603FC27B18DB40033C4F3 /* LoginViewModel.swift in Sources */,
+				D9A3DF2827B38E5600CCE64E /* ButtonView.swift in Sources */,
 				020603FF27B18F980033C4F3 /* LoginView.swift in Sources */,
 				020603F227B18A260033C4F3 /* Credentials.swift in Sources */,
 				02D3E26227AC42F600B5B8C1 /* SplashScreenView.swift in Sources */,

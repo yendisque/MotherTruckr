@@ -19,7 +19,8 @@ class APIService
             if credentials.password == "password"
             {
                 compelation(.success(true))
-            } else {
+            } else
+            {
                 compelation(.failure(.invalidCredentials))
             }
         }

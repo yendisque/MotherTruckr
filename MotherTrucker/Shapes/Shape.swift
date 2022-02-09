@@ -22,10 +22,18 @@ struct Triangle: Shape
     }
 }
 
-struct Triangle_Previews: PreviewProvider {
-    static var previews: some View {
+struct BackgroundTriangle: View
+{
+    var body: some View {
         Triangle()
             .stroke(Color.blue, lineWidth: 2)
-            .frame(width: 300.0, height: 300.0)
+            .background(Triangle().fill(Color.green))
+            .frame(width: 2000.0, height: 1000.0)
+    }
+}
+
+struct Triangle_Previews: PreviewProvider {
+    static var previews: some View {
+        BackgroundTriangle()
     }
 }
