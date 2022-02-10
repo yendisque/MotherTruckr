@@ -20,6 +20,7 @@ struct Triangle: Shape
         
         return path
     }
+
 }
 
 struct Triangle_Previews: PreviewProvider {
