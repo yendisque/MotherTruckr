@@ -15,13 +15,15 @@ struct MotherTruckerApp: App
     {
         WindowGroup
         {
-            if authentication.isValidated
-            {
-                HomeView()
-                    .environmentObject(authentication)
-            } else {
-                LoginView()
-                    .environmentObject(authentication)
+            GeometryReader { geo in
+                if authentication.isValidated
+                {
+                    HomeView()
+                        .environmentObject(authentication)
+                } else {
+                    LandingView(screenWidth: geo.size.width, screenHeight: geo.size.height)
+                        .environmentObject(authentication)
+                }
             }
         }
     }

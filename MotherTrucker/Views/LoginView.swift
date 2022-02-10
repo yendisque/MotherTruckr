@@ -7,34 +7,23 @@
 
 import SwiftUI
 
-struct LoginView: View
-{
+struct LoginView: View {
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
-    var body: some View
-    {
+    var screenWidth: CGFloat
+    var screenHeight: CGFloat
+    
+    var body: some View {
         ZStack {
             BackgroundTriangle()
-            VStack {
-//                Text("Welcome Back!")
-//                    .fontWeight(.bold)
-//                    .font(.largeTitle)
-//                    .offset(x: -100, y: -280)
-//                    .frame(width: 180, height: 150)
-//
-//                TextField("Email Address", text: $loginVM.credentials.email)
-//                    .keyboardType(.emailAddress)
-//                    .frame(width: 317, height: 55)
-//                    .offset(x: 0, y: -150)
-//
-//                SecureField("Password", text: $loginVM.credentials.password)
-//                    .frame(width: 317, height: 55)
-//                    .offset(x: 0, y: -100)
-    
-                if loginVM.showProgressView
-                {
-                    ProgressView()
-                }
+            VStack(alignment: .center) {
+                Spacer()
+                
+                LoginComponents(loginVM: loginVM, screenWidth: screenWidth, screenHeight: screenHeight) //.offset(y: 100)
+                
+                Spacer().frame(height: 64)
+                
+                if loginVM.showProgressView { ProgressView() }
     
                 // Log In Button
                 Button {
@@ -44,22 +33,49 @@ struct LoginView: View
                     }
                 } label: {
                     // View
-                    ButtonView(disabled: loginVM.loginDisabled)
-                }
+                    ButtonView(disabled: loginVM.loginDisabled, width: screenWidth, height: screenHeight)
+                }.padding()
+                Spacer()
             }
+            .frame(width: 828, height: 1917)
+            .offset(y: 75)
+            .padding()
         }
-        .autocapitalization(.none)
-        .textFieldStyle(RoundedBorderTextFieldStyle())
-        .disabled(loginVM.showProgressView)
-        .alert(item: $loginVM.error)
-        {
+        .toolbar {
+            NavBar()
+        }
+        .alert(item: $loginVM.error) {
             error in Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
         }
     }
 }
 
+struct LoginComponents: View {
+    @StateObject var loginVM: LoginViewModel
+    var screenWidth, screenHeight: CGFloat
+    
+    var body: some View {
+        TextArea(placeholder: "Username or Email",
+                 text: $loginVM.credentials.email,
+                 width: 317, height: 55)
+            .padding(31)
+
+        SecureTextArea(placeholder: "Password",
+                       text: $loginVM.credentials.password,
+                       width: 317, height: 55)
+            .padding(.bottom)
+        
+        Text("Forgot Password?")
+//            .bold()
+            .font(.system(size: 15))
+            .padding()
+        
+        LoginCardView(width: screenWidth, height: screenHeight).padding()
+    }
+}
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(screenWidth: 828.0, screenHeight: 1719.0)
     }
 }

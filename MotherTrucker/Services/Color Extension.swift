@@ -16,3 +16,8 @@ extension Color {
         self.init(.sRGB, red: red, green: green, blue: blue, opacity: opacity)
     }
 }
+
+
+extension Color {
+    static let BackgroundBlack = Color(hex: 0x262626)
+}

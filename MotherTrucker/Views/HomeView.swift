@@ -17,10 +17,7 @@ struct HomeView: View
             HStack
             {
                 Text("Home")
-                    
             }
-            
-            
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing)
@@ -31,8 +28,5 @@ struct HomeView: View
             }
         }
         .navigationTitle("Home")
-        
     }
 }
-
-
