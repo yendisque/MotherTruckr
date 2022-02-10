@@ -8,19 +8,17 @@
 import SwiftUI
 
 // Splash Screen
-struct SplashScreenView: View
-{
+struct SplashScreenView: View {
     @State var animate = false
     @State var endSplash = false
+    //var screenWidth:CGFloat
+    //var screenHeight: CGFloat
     
-    var body: some View
-    {
-        ZStack
-        {
-            LoginView()
+    var body: some View {
+        ZStack {
+            //LoginView(screenWidth: screenWidth, screenHeight: screenHeight)
             
-            ZStack
-            {
+            ZStack {
                 LinearGradient(gradient: Gradient(colors: [ Color(hex: 0x7BED9F), Color(hex: 0x07C656) ]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 
                 Image("Truck")
@@ -40,20 +38,20 @@ struct SplashScreenView: View
         }
     }
     
-    func animateSplash()
-    {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25)
-        {
-            withAnimation(Animation.easeOut(duration: 0.45))
-            {
+    func animateSplash() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            withAnimation(Animation.easeOut(duration: 0.45)) {
                 animate.toggle()
             }
-            withAnimation(Animation.linear(duration: 0.35))
-            {
+            withAnimation(Animation.linear(duration: 0.35)) {
                 endSplash.toggle()
             }
         }
     }
 }
 
-
+struct SplashScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashScreenView()
+    }
+}

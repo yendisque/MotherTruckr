@@ -26,7 +26,5 @@ struct Triangle: Shape
 struct Triangle_Previews: PreviewProvider {
     static var previews: some View {
         Triangle()
-            .stroke(Color.blue, lineWidth: 2)
-            .frame(width: 300.0, height: 300.0)
     }
 }
