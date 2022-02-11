@@ -27,12 +27,7 @@ struct LandingContent: View {
         ZStack {
             BackgroundTriangle()
             VStack {
-                Text("The Future of Supply")
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 200, height: 200)
-                    .dynamicTypeSize(.accessibility1)
+                TitleText(text: "The Future of Supply")
                     .padding(.top, 80)
                     .padding(.trailing, 150)
 
@@ -40,16 +35,21 @@ struct LandingContent: View {
                     .resizable()
                     .frame(width: 420, height: 265)
                     .padding(.top, 100)
-                    .padding(.bottom, 100)
 
-                Text("Already have an account?")
+                VStack {
+                    NavigationLink(destination: SignupView(width: width, height: height)) {
+                        ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
+                    }.padding()
+                    
+                    Text("Already have an account?")
 
-                NavigationLink(destination: LoginView(screenWidth: width, screenHeight: height)) {
-                    // The disabled argument should be connected with the backend at some point, not sure
-                    // I've just arbitarily set it to false right now
-                    ButtonView(text: "Login", width: width, height: height, disabled: false)
+                    NavigationLink(destination: LoginView(screenWidth: width, screenHeight: height)) {
+                        // The disabled argument should be connected with the backend at some point, not sure
+                        // I've just arbitarily set it to false right now
+                        ButtonView(text: "Login", width: width, height: height, disabled: false)
+                    }
                 }
-                .padding(.bottom, 200)
+                .padding(.bottom, 210)
             }
         }
     }
