@@ -20,7 +20,7 @@ struct LoginView: View {
             VStack(alignment: .center) {
                 Spacer()
                 
-                LoginComponents(loginVM: loginVM, screenWidth: screenWidth, screenHeight: screenHeight) //.offset(y: 100)
+                LoginComponents(loginVM: loginVM, screenWidth: screenWidth, screenHeight: screenHeight)
                 
                 Spacer().frame(height: 64)
                 
@@ -28,13 +28,11 @@ struct LoginView: View {
     
                 // Log In Button
                 Button {
-                    // Action
                     loginVM.login { success in
                         authentication.updatedValidation(success: success)
                     }
                 } label: {
-                    // View
-                    ButtonView(disabled: loginVM.loginDisabled, width: screenWidth, height: screenHeight)
+                    ButtonView(text: "Log In", width: screenWidth, height: screenHeight, disabled: loginVM.loginDisabled)
                 }.padding()
                 Spacer()
             }
@@ -67,7 +65,6 @@ struct LoginComponents: View {
             .padding(.bottom)
         
         Text("Forgot Password?")
-//            .bold()
             .font(.system(size: 15))
             .padding()
         

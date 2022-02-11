@@ -23,7 +23,7 @@ struct BackgroundTriangle: View
                 )
                 .frame(width: 2000.0, height: 1000.0)
             Spacer().frame(height: 120)
-        }
+        }.offset(y:1)
     }
 }
 
