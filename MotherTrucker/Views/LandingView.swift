@@ -10,15 +10,17 @@
 
 import SwiftUI
 
-struct FirstLandingView: View
+struct LandingView: View
 {
+    var screenWidth, screenHeight: CGFloat
+    
     var body: some View
     {
         ZStack
         {
             
             
-            NavigationLink(destination: LoginView())
+            NavigationLink(destination: LoginView(screenWidth: screenWidth, screenHeight: screenHeight))
             {
                 Text("Log In")
                 .fontWeight(.semibold)
@@ -71,10 +73,10 @@ struct FirstLandingView: View
     }
 }
 
-struct FirstLandingView_Previews: PreviewProvider
+struct LandingView_Previews: PreviewProvider
 {
     static var previews: some View
     {
-        FirstLandingView()
+        LandingView(screenWidth: 828, screenHeight: 1917)
     }
 }
