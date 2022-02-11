@@ -14,6 +14,16 @@ struct LandingView: View {
     var screenWidth, screenHeight: CGFloat
     
     var body: some View {
+        NavigationView {
+            LandingContent(width: screenWidth, height: screenHeight)
+        }.ignoresSafeArea(.all)
+    }
+}
+
+struct LandingContent: View {
+    var width, height: CGFloat
+    
+    var body: some View {
         ZStack {
             BackgroundTriangle()
             VStack {
@@ -29,14 +39,15 @@ struct LandingView: View {
                 Image("FirstLandingViewImage")
                     .resizable()
                     .frame(width: 420, height: 265)
-                    .padding()
+                    .padding(.top, 100)
+                    .padding(.bottom, 100)
 
                 Text("Already have an account?")
 
-                NavigationLink(destination: LoginView(screenWidth: screenWidth, screenHeight: screenHeight)) {
+                NavigationLink(destination: LoginView(screenWidth: width, screenHeight: height)) {
                     // The disabled argument should be connected with the backend at some point, not sure
                     // I've just arbitarily set it to false right now
-                    ButtonView(text: "Login", width: screenWidth, height: screenHeight, disabled: false)
+                    ButtonView(text: "Login", width: width, height: height, disabled: false)
                 }
                 .padding(.bottom, 200)
             }

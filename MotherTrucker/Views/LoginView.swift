@@ -40,6 +40,8 @@ struct LoginView: View {
             .offset(y: 75)
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading: TitleView())
         .toolbar {
             NavBar()
         }

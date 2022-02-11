@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NavBar: ToolbarContent {
     var body: some ToolbarContent {
-        ToolbarItem(placement: .navigation) {
+        ToolbarItem(placement: .navigationBarLeading) {
             TitleView()
         }
 //        ToolbarItem(placement: .destructiveAction) {
@@ -31,8 +31,6 @@ struct TitleView: View {
         }
         .padding(.leading)
         .padding(.top)
-//        .frame(width: 180, height: 150)
-        
     }
 }
 
