@@ -10,43 +10,53 @@ import SwiftUI
 struct LoginView: View {
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
-
-    var screenWidth: CGFloat
-    var screenHeight: CGFloat
+    var screenWidth, screenHeight: CGFloat
     
     var body: some View {
         ZStack {
             BackgroundTriangle()
             VStack(alignment: .center) {
-                Spacer()
+                TitleText(text: "Welcome Back")
+                    .padding(.trailing, 150)
+                    .offset(y: -50)
                 
-                LoginComponents(loginVM: loginVM, screenWidth: screenWidth, screenHeight: screenHeight) //.offset(y: 100)
+                // Text Fields
+                LoginComponents(loginVM: loginVM, screenWidth: screenWidth, screenHeight: screenHeight)
                 
                 Spacer().frame(height: 64)
                 
-                if loginVM.showProgressView { ProgressView() }
-    
                 // Log In Button
-                Button {
-                    // Action
-                    loginVM.login { success in
-                        authentication.updatedValidation(success: success)
-                    }
-                } label: {
-                    // View
-                    ButtonView(disabled: loginVM.loginDisabled, width: screenWidth, height: screenHeight)
-                }.padding()
-                Spacer()
+                LoginButton(loginVM: loginVM, width: screenWidth, height: screenHeight)
+                    .padding(.bottom, 100)
             }
-            .frame(width: 828, height: 1917)
-            .offset(y: 75)
-            .padding()
         }
+        .navigationBarBackButtonHidden(true)
+        .edgesIgnoringSafeArea(.top)
         .toolbar {
             NavBar()
         }
         .alert(item: $loginVM.error) {
             error in Alert(title: Text("Invalid Login"), message: Text(error.localizedDescription))
+        }
+    }
+}
+
+struct LoginButton: View {
+    @StateObject var loginVM: LoginViewModel
+    @EnvironmentObject var authentication: Authentication
+    var width, height: CGFloat
+    
+    var body: some View {
+        Button {
+            loginVM.login { success in
+                authentication.updatedValidation(success: success)
+            }
+        } label: {
+            if loginVM.showProgressView {
+                ProgressView()
+            }else {
+                ButtonView(text: "Log In", width: width, height: height, disabled: loginVM.loginDisabled)
+            }
         }
     }
 }
@@ -67,7 +77,6 @@ struct LoginComponents: View {
             .padding(.bottom)
         
         Text("Forgot Password?")
-//            .bold()
             .font(.system(size: 15))
             .padding()
         

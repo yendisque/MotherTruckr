@@ -5,78 +5,58 @@
 //  Created by Jason Coawette on 2/9/22.
 //
 
-// To DO
-// - FIX Color Transition Between rectanagle and triangle backrounds
-
 import SwiftUI
-
-struct LandingView: View
-{
+/*
+MARK: Ok so try to avoid relying on .offset() to position elements in the view. This is because it does not scale well ultimately and makes the UI hard to manage and maintain. It also becomes are to dynamically fit the layout to other phone screen sizes because they all use the offset values for the device you were testing them on.
+ Instead use Spacers(), .padding(), and VStack/HStack/ZStacks to create the layout
+*/
+struct LandingView: View {
     var screenWidth, screenHeight: CGFloat
     
-    var body: some View
-    {
-        ZStack
-        {
-            
-            
-            NavigationLink(destination: LoginView(screenWidth: screenWidth, screenHeight: screenHeight))
-            {
-                Text("Log In")
-                .fontWeight(.semibold)
-                .font(.title)
-                .padding(.horizontal, 95.0)
-                .padding(.vertical, 13)
-                .frame(width: 300.0, height: 55)
-                .accentColor(.black)
-                .background(Color.white)
-                .cornerRadius(30)
-                .shadow(radius: 4, y: 4)
-                .offset(y: 300)
-                
-            }
-        
-            
-            HStack
-            {
-                
-                Text("Already have an account?")
-                    .frame(width: 200, height: 18)
-                    .offset(x: 190, y: 240)
-                
-                Image("FirstLandingViewImage")
-                    .resizable()
-                    .frame(width: 380, height: 240)
-                    .offset(x: -110)
-            }
-            .background(
-                Triangle()
-                    .fill(LinearGradient(gradient: Gradient(colors: [ Color(hex: 0x7BED9F), Color(hex: 0x07C656) ]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .frame(width: 500, height: 250))
-            
-            
-            Text("The Future of Supply")
-                .fontWeight(.bold)
-                .font(.largeTitle)
-                .multilineTextAlignment(.leading)
-                .frame(width: 200, height: 200)
-                .offset(x: -65 ,y: -280)
-                .dynamicTypeSize(.accessibility1)
-            
-            
-        }
-        .background(
-            Rectangle()
-                .fill(LinearGradient(gradient: Gradient(colors: [ Color(hex: 0x7BED9F), Color(hex: 0x07C656) ]), startPoint: .topLeading, endPoint: .topTrailing))
-                .frame(width: 500, height: 290)
-                .offset(y: 270))
+    var body: some View {
+        NavigationView {
+            LandingContent(width: screenWidth, height: screenHeight)
+        }.ignoresSafeArea(.all)
     }
 }
 
-struct LandingView_Previews: PreviewProvider
-{
-    static var previews: some View
-    {
+struct LandingContent: View {
+    var width, height: CGFloat
+    
+    var body: some View {
+        ZStack {
+            BackgroundTriangle()
+            VStack {
+                TitleText(text: "The Future of Supply")
+                    .padding(.top, 80)
+                    .padding(.trailing, 150)
+
+                Image("FirstLandingViewImage")
+                    .resizable()
+                    .frame(width: 420, height: 265)
+                    .padding(.top, 100)
+
+                VStack {
+                    NavigationLink(destination: SignupView(width: width, height: height)) {
+                        ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
+                    }.padding()
+                    
+                    Text("Already have an account?")
+
+                    NavigationLink(destination: LoginView(screenWidth: width, screenHeight: height)) {
+                        // The disabled argument should be connected with the backend at some point, not sure
+                        // I've just arbitarily set it to false right now
+                        ButtonView(text: "Login", width: width, height: height, disabled: false)
+                    }
+                }
+                .padding(.bottom, 210)
+            }
+        }
+    }
+}
+
+struct LandingView_Previews: PreviewProvider {
+    static var previews: some View {
         LandingView(screenWidth: 828, screenHeight: 1917)
     }
 }
