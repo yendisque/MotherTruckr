@@ -14,9 +14,11 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            BackgroundTriangle()
+            BackgroundTriangle(width: screenWidth, height: screenHeight)
+                .offset(y: round(screenHeight * 0.092))
             VStack(alignment: .center) {
                 TitleText(text: "Welcome Back")
+                    .padding(.top)
                     .padding(.trailing, 150)
                     .offset(y: -50)
                 
@@ -27,9 +29,9 @@ struct LoginView: View {
                 
                 // Log In Button
                 LoginButton(loginVM: loginVM, width: screenWidth, height: screenHeight)
-                    .padding(.bottom, 100)
             }
         }
+        .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.top)
         .toolbar {
@@ -68,24 +70,28 @@ struct LoginComponents: View {
     var body: some View {
         TextArea(placeholder: "Username or Email",
                  text: $loginVM.credentials.email,
-                 width: 317, height: 55)
+                 width: screenWidth, height: screenHeight)
             .padding(31)
 
         SecureTextArea(placeholder: "Password",
                        text: $loginVM.credentials.password,
-                       width: 317, height: 55)
+                       width: screenWidth, height: screenHeight)
             .padding(.bottom)
         
-        Text("Forgot Password?")
-            .font(.system(size: 15))
-            .padding()
-        
+        NavigationLink(destination: ForgotPassView(width: screenWidth, height: screenHeight)) {
+            Text("Forgot Password?")
+                .font(.system(size: 15))
+                .padding()
+        }.buttonStyle(.plain)
+
         LoginCardView(width: screenWidth, height: screenHeight).padding()
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(screenWidth: 828.0, screenHeight: 1719.0)
+        GeometryReader { geo in
+            LoginView(screenWidth: geo.size.width, screenHeight: geo.size.height)
+        }
     }
 }

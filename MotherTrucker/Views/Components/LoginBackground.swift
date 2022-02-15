@@ -7,28 +7,29 @@
 
 import SwiftUI
 
-struct BackgroundTriangle: View
-{
+struct BackgroundTriangle: View {
+    var width, height: CGFloat
+    
     var body: some View {
         VStack(alignment: .center) {
-            Triangle()
+            CustomShape(width: width, height: height)
                 .stroke(Color.blue, lineWidth: 0)
                 .background(
-                    Triangle()
+                    CustomShape(width: width, height: height)
                         .fill(
                             LinearGradient(gradient:Gradient(colors: [Color(hex: 0x2ED573),
                                                                       Color(hex: 0x7BED9F)]),
                                            startPoint: .bottomTrailing, endPoint: .topLeading)
                         )
                 )
-                .frame(width: 2000.0, height: 1000.0)
-            Spacer().frame(height: 120)
-        }.offset(y:1)
+        }
     }
 }
 
 struct BackgroundTriangle_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundTriangle()
+        GeometryReader { geo in
+            BackgroundTriangle(width: geo.size.width, height: geo.size.height)
+        }
     }
 }

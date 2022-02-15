@@ -25,7 +25,8 @@ struct LandingContent: View {
     
     var body: some View {
         ZStack {
-            BackgroundTriangle()
+            BackgroundTriangle(width: width, height: height)
+                .offset(x: 3, y: round(height * 0.092))
             VStack {
                 TitleText(text: "The Future of Supply")
                     .padding(.top, 80)
@@ -57,6 +58,8 @@ struct LandingContent: View {
 
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
-        LandingView(screenWidth: 828, screenHeight: 1917)
+        GeometryReader { geo in
+            LandingView(screenWidth: geo.size.width, screenHeight: geo.size.height)
+        }
     }
 }
