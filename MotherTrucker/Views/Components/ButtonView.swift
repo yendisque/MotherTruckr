@@ -14,11 +14,11 @@ struct ButtonView: View {
     @State var disabled: Bool
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             Text(text)
                 .fontWeight(.semibold)
                 .font(.title)
-                .frame(width: round(width * 0.3623), height: round(height * 0.02869))
+                .frame(width: round(width * 0.7632), height: round(height * 0.0762))
                 .foregroundColor(disabled ? .secondary : .primary)
                 .accentColor(.black)
                 .background(Color.white)
@@ -30,6 +30,8 @@ struct ButtonView: View {
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(text: "Button", width: 828, height: 1917, disabled: false)
+        GeometryReader { geo in
+            ButtonView(text: "Button", width: geo.size.width, height: geo.size.height, disabled: false)
+        }
     }
 }
