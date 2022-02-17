@@ -49,17 +49,20 @@ struct LoginButton: View {
     var width, height: CGFloat
     
     var body: some View {
-        Button {
-            loginVM.login { success in
-                authentication.updatedValidation(success: success)
-            }
-        } label: {
+        //MARK: I commented out this button code so that we can make it a navlink to the HomeView, this will be changed when we have the backend working
+//        Button {
+//            loginVM.login { success in
+//                authentication.updatedValidation(success: success)
+//            }
+//        } label: {
+        NavigationLink(destination: HomeView(width: width, height: height)) {
             if loginVM.showProgressView {
                 ProgressView()
             }else {
                 ButtonView(text: "Log In", width: width, height: height, disabled: loginVM.loginDisabled)
             }
         }
+//        }
     }
 }
 
