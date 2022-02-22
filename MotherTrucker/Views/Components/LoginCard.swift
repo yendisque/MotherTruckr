@@ -26,7 +26,7 @@ struct LoginCardView: View {
                 }.padding(.bottom)
             }
         }
-        .frame(width: round(width * 0.3671), height: round(height * 0.0678)) // 0.1361
+        .frame(width: round(width * 0.7343), height: round(height * 0.1548)) // 0.1361
         .cornerRadius(20)
         .shadow(radius: 4, y: 4)
     }
@@ -56,6 +56,8 @@ struct LogoView: View {
 
 struct LoginCardView_Preview: PreviewProvider {
     static var previews: some View {
-        LoginCardView(width: 828, height: 1917)
+        GeometryReader { geo in
+            LoginCardView(width: geo.size.width, height: geo.size.height)
+        }
     }
 }

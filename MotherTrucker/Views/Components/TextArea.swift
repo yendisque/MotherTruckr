@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TextArea: View {
+    var image: String = "person.fill"
     var placeholder:String
     @Binding var text: String
     var width, height: CGFloat
@@ -16,7 +17,7 @@ struct TextArea: View {
         ZStack {
             Color.BackgroundBlack
             HStack(alignment: .center) {
-                Image(systemName: "person.fill")
+                Image(systemName: image)
                     .imageScale(.medium)
                     .foregroundColor(.white)
                     .padding(.leading)
@@ -32,7 +33,7 @@ struct TextArea: View {
                     .keyboardType(.emailAddress)
             }
         }
-        .frame(width: width, height: height)
+        .frame(width: width * 0.7557, height: height * 0.0676)
         .cornerRadius(10)
         .shadow(radius: 4, y: 4)
     }
@@ -63,7 +64,7 @@ struct SecureTextArea: View {
                     .autocapitalization(.none)
             }
         }
-        .frame(width: width, height: height)
+        .frame(width: width * 0.7557, height: height * 0.0676)
         .cornerRadius(10)
         .shadow(radius: 4, y: 4)
     }
