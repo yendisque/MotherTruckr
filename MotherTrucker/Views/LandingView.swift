@@ -9,6 +9,8 @@ import SwiftUI
 /*
 MARK: Ok so try to avoid relying on .offset() to position elements in the view. This is because it does not scale well ultimately and makes the UI hard to manage and maintain. It also becomes are to dynamically fit the layout to other phone screen sizes because they all use the offset values for the device you were testing them on.
  Instead use Spacers(), .padding(), and VStack/HStack/ZStacks to create the layout
+ 
+ Lets make transitions better when transitioning between screens
 */
 struct LandingView: View {
     var screenWidth, screenHeight: CGFloat

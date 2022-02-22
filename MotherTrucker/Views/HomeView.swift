@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authentication: Authentication
+    
     var body: some View {
         VStack {
             HStack {
