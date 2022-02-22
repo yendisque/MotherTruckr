@@ -59,7 +59,7 @@ struct LoginButton: View {
             if loginVM.showProgressView {
                 ProgressView()
             }else {
-                ButtonView(text: "Log In", width: width, height: height, disabled: loginVM.loginDisabled)
+                ButtonView(text: "Login", width: width, height: height, disabled: false)
             }
         }
 //        }
@@ -84,8 +84,11 @@ struct LoginComponents: View {
         NavigationLink(destination: ForgotPassView(width: screenWidth, height: screenHeight)) {
             Text("Forgot Password?")
                 .font(.system(size: 15))
+                .fontWeight(.bold)
                 .padding()
+                
         }.buttonStyle(.plain)
+            
 
         LoginCardView(width: screenWidth, height: screenHeight).padding()
     }

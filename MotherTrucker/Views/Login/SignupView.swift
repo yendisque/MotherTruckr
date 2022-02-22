@@ -22,28 +22,32 @@ struct SignupView: View {
                 
                 TextArea(placeholder: "Username or Email",
                          text: $emailCreds,
-                         width: width, height: 55)
+                         width: width, height: height)
 
                 SecureTextArea(placeholder: "Password",
                                text: $passCreds,
-                               width: width, height: 55)
+                               width: width, height: height)
                     .padding(20)
                 
                 SecureTextArea(placeholder: "Confirm Password",
                                text: $passCreds,
-                               width: width, height: 55)
+                               width: width, height: height)
                     .padding(.bottom, 30)
                 
                 LoginCardView(width: width, height: height)
                     .padding()
                 
-                Text("By clicking the sign up button, you to the public offer")
+                Text("By clicking the sign up button, you agree to the public offer")
                     .frame(width: 258, height: 50)
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
-                    .padding(.bottom, 100)
+                NavigationLink(destination: OnboardingView(width: width, height: height)){
+                    
+                    ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
+                        .padding(.bottom, 100)
+                }
+             
                 
             }
         }
@@ -58,7 +62,7 @@ struct SignupView: View {
 struct SignupView_Preview: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            SignupView(width: geo.size.width, height: geo.size.height)
+            SignupView(width: 414, height: 818)
         }
     }
 }

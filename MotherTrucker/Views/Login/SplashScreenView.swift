@@ -11,12 +11,12 @@ import SwiftUI
 struct SplashScreenView: View {
     @State var animate = false
     @State var endSplash = false
-    //var screenWidth:CGFloat
-    //var screenHeight: CGFloat
+    var width, height: CGFloat
     
     var body: some View {
         ZStack {
-            //LoginView(screenWidth: screenWidth, screenHeight: screenHeight)
+            
+            OnboardingView(width: width, height: height)
             
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [ Color(hex: 0x7BED9F), Color(hex: 0x07C656) ]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -52,6 +52,9 @@ struct SplashScreenView: View {
 
 struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreenView()
+        
+        GeometryReader { geo in
+            SplashScreenView(width: 414, height: 818)
+        }
     }
 }
