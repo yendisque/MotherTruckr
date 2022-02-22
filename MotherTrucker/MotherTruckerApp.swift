@@ -16,8 +16,7 @@ struct MotherTruckerApp: App
         WindowGroup
         {
             GeometryReader { geo in
-                if authentication.isValidated
-                {
+                if authentication.isValidated {
                     HomeView(width: geo.size.width, height: geo.size.height)
                         .environmentObject(authentication)
                 } else {

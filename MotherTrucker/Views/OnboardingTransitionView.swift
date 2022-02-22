@@ -19,7 +19,7 @@ struct OnboaringTransitionView: View{
             if onboarding {
                 OnboardingView(width: width, height: height)
             } else {
-                HomeView()
+                HomeView(width: width, height: height)
                     .transition(.move(edge: .trailing))
             
                 
