@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var viewRouter: ViewRouter
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     var screenWidth, screenHeight: CGFloat
@@ -28,7 +29,7 @@ struct LoginView: View {
                 Spacer().frame(height: 64)
                 
                 // Log In Button
-                LoginButton(loginVM: loginVM, width: screenWidth, height: screenHeight)
+                LoginButton(viewRouter: viewRouter, loginVM: loginVM, width: screenWidth, height: screenHeight)
             }
         }
         .ignoresSafeArea()
@@ -44,25 +45,21 @@ struct LoginView: View {
 }
 
 struct LoginButton: View {
+    @StateObject var viewRouter: ViewRouter
     @StateObject var loginVM: LoginViewModel
     @EnvironmentObject var authentication: Authentication
     var width, height: CGFloat
     
     var body: some View {
-        //MARK: I commented out this button code so that we can make it a navlink to the HomeView, this will be changed when we have the backend working
-//        Button {
-//            loginVM.login { success in
-//                authentication.updatedValidation(success: success)
-//            }
-//        } label: {
-        NavigationLink(destination: HomeView(width: width, height: height)) {
+        Button {
+            authentication.isValidated = true
+        } label: {
             if loginVM.showProgressView {
                 ProgressView()
             }else {
                 ButtonView(text: "Login", width: width, height: height, disabled: false)
             }
         }
-//        }
     }
 }
 
@@ -97,7 +94,7 @@ struct LoginComponents: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            LoginView(screenWidth: geo.size.width, screenHeight: geo.size.height)
+            LoginView(viewRouter: ViewRouter(), screenWidth: geo.size.width, screenHeight: geo.size.height)
         }
     }
 }

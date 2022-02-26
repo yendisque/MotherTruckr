@@ -20,4 +20,6 @@ extension Color {
 
 extension Color {
     static let BackgroundBlack = Color(hex: 0x262626)
+    static let MessagesWhite = Color(hex: 0xFAFAFA)
+    static let LinearColor = LinearGradient(colors: [.red, .blue], startPoint: .bottom, endPoint: .top)
 }

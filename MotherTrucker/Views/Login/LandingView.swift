@@ -6,23 +6,20 @@
 //
 
 import SwiftUI
-/*
-MARK: Ok so try to avoid relying on .offset() to position elements in the view. This is because it does not scale well ultimately and makes the UI hard to manage and maintain. It also becomes are to dynamically fit the layout to other phone screen sizes because they all use the offset values for the device you were testing them on.
- Instead use Spacers(), .padding(), and VStack/HStack/ZStacks to create the layout
- 
- Lets make transitions better when transitioning between screens
-*/
+
 struct LandingView: View {
+    @StateObject var viewRouter: ViewRouter
     var screenWidth, screenHeight: CGFloat
     
     var body: some View {
         NavigationView {
-            LandingContent(width: screenWidth, height: screenHeight)
+            LandingContent(viewRouter: viewRouter, width: screenWidth, height: screenHeight)
         }.ignoresSafeArea(.all)
     }
 }
 
 struct LandingContent: View {
+    @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
     
     var body: some View {
@@ -46,7 +43,7 @@ struct LandingContent: View {
                     
                     Text("Already have an account?")
 
-                    NavigationLink(destination: LoginView(screenWidth: width, screenHeight: height)) {
+                    NavigationLink(destination: LoginView(viewRouter: viewRouter, screenWidth: width, screenHeight: height)) {
                         // The disabled argument should be connected with the backend at some point, not sure
                         // I've just arbitarily set it to false right now
                         ButtonView(text: "Login", width: width, height: height, disabled: false)
@@ -61,7 +58,7 @@ struct LandingContent: View {
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            LandingView(screenWidth: geo.size.width, screenHeight: geo.size.height)
+            LandingView(viewRouter: ViewRouter(), screenWidth: geo.size.width, screenHeight: geo.size.height)
         }
     }
 }

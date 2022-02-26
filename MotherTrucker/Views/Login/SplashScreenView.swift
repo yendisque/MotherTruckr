@@ -30,7 +30,6 @@ struct SplashScreenView: View {
                 // scaling the view
                 .scaleEffect(animate ? 3 : 1)
                 .frame(width: UIScreen.main.bounds.width)
-                
             }
             .ignoresSafeArea(.all, edges: .all)
             .onAppear(perform: animateSplash)
