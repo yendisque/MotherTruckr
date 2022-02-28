@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct OnboardingView: View{
+struct OnboardingView: View {
     var width, height: CGFloat
     
-    var body: some View{
-        
-        ZStack{
-            
+    var body: some View {
+        ZStack {
             Image("ContractOBS")
                 .resizable()
                 .frame(width: 320, height: 320)
@@ -29,7 +27,7 @@ struct OnboardingView: View{
                 .frame(width: 300, alignment: .leading)
                 .position(x: 195, y: 512)
             
-            VStack{
+            VStack {
                 NavigationLink(destination: OnboardingSupplyView(width: width, height: height)){
                     Text("Next")
                         .font(.title2)
@@ -39,7 +37,6 @@ struct OnboardingView: View{
                         .background(Color(hex: 0xA4EDC2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-                    
                 }
                 .frame(width: 158, height: 52)
                 .position(x: 300, y: 680)
@@ -48,15 +45,11 @@ struct OnboardingView: View{
     }
 }
 
-
-
-struct OnboardingSupplyView: View{
+struct OnboardingSupplyView: View {
     var width, height: CGFloat
     
-    var body: some View{
-       
-        ZStack{
-            
+    var body: some View {
+        ZStack {
             Image("BoxOBS")
                 .resizable()
                 .frame(width: 320, height: 320)
@@ -72,8 +65,8 @@ struct OnboardingSupplyView: View{
                 .frame(width: 300, alignment: .leading)
                 .position(x: 195, y: 512)
             
-            VStack{
-                NavigationLink(destination: OnboardingPayView(onboarding: false, width: width, height: height)){
+            VStack {
+                NavigationLink(destination: OnboardingPayView(width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -82,27 +75,19 @@ struct OnboardingSupplyView: View{
                         .background(Color(hex: 0xA4EDC2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-                    
                 }
             }
             .frame(width: 158, height: 52)
             .position(x: 300, y: 680)
-            
         }
     }
 }
 
-
-
-struct OnboardingPayView: View{
-    @State var onboarding: Bool
+struct OnboardingPayView: View {
     var width, height: CGFloat
     
-    var body: some View{
-        
-        
-        ZStack{
-            
+    var body: some View {
+        ZStack {
             Image("PaidOBS")
                 .resizable()
                 .frame(width: 320, height: 320)
@@ -118,12 +103,8 @@ struct OnboardingPayView: View{
                 .frame(width: 300, alignment: .leading)
                 .position(x: 195, y: 512)
             
-            VStack{
-                Button(action: {
-                    
-                    onboarding = false
-                    
-                }) {
+            VStack {
+                NavigationLink(destination: HomeView(viewRouter: ViewRouter(), width: width, height: height)) {
                     Text("Truck Me!")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -132,21 +113,18 @@ struct OnboardingPayView: View{
                         .background(Color(hex: 0xA4EDC2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-                    
                 }
             }
             .frame(width: 158, height: 52)
             .position(x: 300, y: 680)
-            
         }
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        
         GeometryReader { geo in
-            OnboardingPayView(onboarding: true, width: 414, height: 818)
+            OnboardingPayView(width: 414, height: 818)
         }
     }
 }

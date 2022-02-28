@@ -8,6 +8,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authentication: Authentication
+    @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
     var testData = [
         ListingModel(fromAddress: "8504 W Sethane Rd.",
@@ -42,7 +43,9 @@ struct HomeView: View {
                     }
                 }
             }
-        }.toolbar {
+            Spacer()
+        }
+        .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     authentication.updatedValidation(success: false)
@@ -57,38 +60,16 @@ struct HomeView: View {
                     .fontWeight(.bold)
                     .font(.system(size: 35))
             }
-            
-            ToolbarItem(placement: .bottomBar) {
-                BottomBar()
-            }
         }
         .navigationBarBackButtonHidden(true)
     }
 }
 
-struct BottomBar: View {
-    var body: some View {
-        HStack(spacing: 50) {
-            Image(systemName: "mappin")
-                .imageScale(.large)
-            Image(systemName: "magnifyingglass")
-                .imageScale(.large)
-            LinearGradient(gradient:Gradient(colors: [Color(hex: 0x2ED573),
-                                                      Color(hex: 0x7BED9F)]),
-                                             startPoint: .bottomTrailing, endPoint: .topLeading)
-                .mask(Image(systemName: "house").imageScale(.large))
-            Image(systemName: "hexagon")
-                .imageScale(.large)
-            Image(systemName: "message")
-                .imageScale(.large)
-        }
-    }
-}
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            HomeView(width: geo.size.width, height: geo.size.height)
+            HomeView(viewRouter: ViewRouter(), width: geo.size.width, height: geo.size.height)
         }
     }
 }
