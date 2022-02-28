@@ -33,7 +33,7 @@ struct PaymentsView: View {
                     }
                 }
                 
-                CreditCsrdView(width: width, height: height, balance: 2000000)
+                CreditCardView(width: width, height: height, balance: 2000000)
                     .padding(.top, 40)
             }
             .offset(y: -25)
@@ -100,7 +100,7 @@ struct PaymentMethodView: View {
     }
 }
 
-struct CreditCsrdView: View {
+struct CreditCardView: View {
     var width, height: CGFloat
     var balance: Int
     
@@ -184,7 +184,7 @@ struct AddPaymentMethod: View {
         Text("+ Add payment method")
             .frame(minWidth: 0, maxWidth: round(width * 0.8816))
             .foregroundColor(Color(hex: 0x4B5563))
-            .font(.system(size: 14))
+            .font(.custom(Custom.PlusJakartaSans.regular, size: 14))
             .padding(.top, 25)
             .padding(.bottom, 25)
             .overlay(

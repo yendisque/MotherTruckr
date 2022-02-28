@@ -16,7 +16,7 @@ struct RoutingView: View {
             ZStack {
                 switch viewRouter.currentPage {
                     case .map:
-                        Text("map")
+                        TrackingView(width: width, height: height)
                     case .search:
                         SearchView(width: width, height: height)
                     case .home:
