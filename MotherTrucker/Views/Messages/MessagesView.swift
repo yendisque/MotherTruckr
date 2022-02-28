@@ -107,11 +107,9 @@ struct Message: View {
                     
                 VStack(alignment: .leading) {
                     Text(name)
-                        .font(.system(size: 18))
-                        .fontWeight(.semibold)
+                        .font(.custom(Custom.Poppins.semiBold, size: 18))
                     Text(msg)
-                        .font(.system(size: 14))
-                        .fontWeight(.medium)
+                        .font(.custom(Custom.Poppins.medium, size: 14))
                         .foregroundColor(Color(hex: 0x4D4D4D, opacity: 0.75))
                 }
                 .padding(.leading)
@@ -123,8 +121,7 @@ struct Message: View {
                 
                 VStack(alignment: .trailing) {
                     Text(time)
-                        .fontWeight(.medium)
-                        .font(.system(size: 12))
+                        .font(.custom(Custom.Poppins.medium, size: 12))
                         .foregroundColor(Color(hex: 0x4D4D4D, opacity: 0.75))
                         .padding(.trailing, 0)
                     

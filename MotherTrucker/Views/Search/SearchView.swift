@@ -50,8 +50,9 @@ struct SearchBar: View {
             Color(hex: 0xEEEEEE)
                 
             HStack {
-                 Image(systemName: "magnifyingglass")
-                 TextField("Search", text: $searchText)
+                Image(systemName: "magnifyingglass")
+                TextField("Search", text: $searchText)
+                    .font(.custom(Custom.Roboto.regular, size: 17))
                 Spacer()
                 Image(systemName: "mic.fill")
             }

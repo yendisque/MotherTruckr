@@ -28,6 +28,12 @@
 		D91F7B2527C562B100E77E2C /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91F7B2427C562B100E77E2C /* MessagesView.swift */; };
 		D927069E27B4942100F53E2C /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927069D27B4942100F53E2C /* NavBar.swift */; };
 		D956A7F027B6F09500AEBE9B /* TitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D956A7EF27B6F09500AEBE9B /* TitleText.swift */; };
+		D95D20E927CD1FE400BBCC85 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D20E827CD1FE400BBCC85 /* Tracking.swift */; };
+		D95D210227CD5EA800BBCC85 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D20F627CD5EA800BBCC85 /* Roboto-Regular.ttf */; };
+		D95D210427CD5F8900BBCC85 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D210327CD5F8900BBCC85 /* FontsManager.swift */; };
+		D95D210627CD605400BBCC85 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D210527CD605400BBCC85 /* Poppins-SemiBold.ttf */; };
+		D95D210827CD606300BBCC85 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D210727CD606300BBCC85 /* Poppins-Medium.ttf */; };
+		D95D210A27CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D210927CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf */; };
 		D9A3DF2827B38E5600CCE64E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3DF2727B38E5600CCE64E /* ButtonView.swift */; };
 		D9C5A12127BC36CD002B12AE /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5A12027BC36CD002B12AE /* ListingView.swift */; };
 		D9C5A12327BC36E3002B12AE /* BigCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5A12227BC36E3002B12AE /* BigCard.swift */; };
@@ -65,6 +71,12 @@
 		D927069D27B4942100F53E2C /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		D956A7ED27B6E61000AEBE9B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D956A7EF27B6F09500AEBE9B /* TitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleText.swift; sourceTree = "<group>"; };
+		D95D20E827CD1FE400BBCC85 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
+		D95D20F627CD5EA800BBCC85 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		D95D210327CD5F8900BBCC85 /* FontsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
+		D95D210527CD605400BBCC85 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		D95D210727CD606300BBCC85 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		D95D210927CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
 		D9A3DF2727B38E5600CCE64E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		D9C5A12027BC36CD002B12AE /* ListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
 		D9C5A12227BC36E3002B12AE /* BigCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCard.swift; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 		020603FD27B18F1F0033C4F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D95D20E727CD1FDA00BBCC85 /* Tracking */,
 				D9142CB527CACDCC006C5079 /* Search */,
 				D9142CB227CA9173006C5079 /* Payments */,
 				D9C5A11F27BC3690002B12AE /* Home */,
@@ -147,6 +160,7 @@
 		02D3E25E27AC42F600B5B8C1 /* MotherTrucker */ = {
 			isa = PBXGroup;
 			children = (
+				D95D20EA27CD5E5E00BBCC85 /* Fonts */,
 				02D3E26D27AC4B9900B5B8C1 /* Info.plist */,
 				02D3E25F27AC42F600B5B8C1 /* MotherTruckerApp.swift */,
 				0206040027B193AF0033C4F3 /* Authentication.swift */,
@@ -213,6 +227,26 @@
 				D91F7B2427C562B100E77E2C /* MessagesView.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		D95D20E727CD1FDA00BBCC85 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				D95D20E827CD1FE400BBCC85 /* Tracking.swift */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		D95D20EA27CD5E5E00BBCC85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D95D20F627CD5EA800BBCC85 /* Roboto-Regular.ttf */,
+				D95D210327CD5F8900BBCC85 /* FontsManager.swift */,
+				D95D210927CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf */,
+				D95D210727CD606300BBCC85 /* Poppins-Medium.ttf */,
+				D95D210527CD605400BBCC85 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D9C5A11E27BC367B002B12AE /* Login */ = {
@@ -297,7 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				02D3E26727AC42F700B5B8C1 /* Preview Assets.xcassets in Resources */,
+				D95D210A27CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf in Resources */,
+				D95D210627CD605400BBCC85 /* Poppins-SemiBold.ttf in Resources */,
+				D95D210227CD5EA800BBCC85 /* Roboto-Regular.ttf in Resources */,
 				02D3E26427AC42F700B5B8C1 /* Assets.xcassets in Resources */,
+				D95D210827CD606300BBCC85 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95D20E927CD1FE400BBCC85 /* Tracking.swift in Sources */,
 				D9E387CA27C8173A0036C009 /* RoutingView.swift in Sources */,
 				D9FA581B27C53BDA00B3B50D /* ForgotPassView.swift in Sources */,
 				D9FA581927C53BC300B3B50D /* LoginView.swift in Sources */,
@@ -337,6 +376,7 @@
 				D91AB85927B4546A0005ACA0 /* LoginCard.swift in Sources */,
 				0206040127B193AF0033C4F3 /* Authentication.swift in Sources */,
 				D9C5A12127BC36CD002B12AE /* ListingView.swift in Sources */,
+				D95D210427CD5F8900BBCC85 /* FontsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +513,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MotherTrucker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MotherTrucker;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location to allow for you to use map navigation within the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -503,6 +544,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MotherTrucker/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MotherTrucker;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs your location to allow for you to use map navigation within the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
