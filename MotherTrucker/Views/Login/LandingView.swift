@@ -28,8 +28,10 @@ struct LandingContent: View {
                 .offset(x: 3, y: round(height * 0.092))
             VStack {
                 TitleText(text: "The Future of Supply")
+                    .frame(width: 200, height: 200)
                     .padding(.top, 80)
-                    .padding(.trailing, 150)
+                    .padding(.trailing, 170)
+                    .padding(.leading, 20)
 
                 Image("FirstLandingViewImage")
                     .resizable()
@@ -39,7 +41,7 @@ struct LandingContent: View {
                 VStack {
                     NavigationLink(destination: SignupView(width: width, height: height)) {
                         ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
-                    }.padding()
+                    }.padding(.bottom, 20)
                     
                     Text("Already have an account?")
 
@@ -48,8 +50,11 @@ struct LandingContent: View {
                         // I've just arbitarily set it to false right now
                         ButtonView(text: "Login", width: width, height: height, disabled: false)
                     }
+                    Spacer()
                 }
                 .padding(.bottom, 210)
+                
+            
             }
         }
     }

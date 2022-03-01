@@ -12,6 +12,8 @@
 		020603F827B18CDE0033C4F3 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020603F727B18CDE0033C4F3 /* UIApplication + Extension.swift */; };
 		020603FC27B18DB40033C4F3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020603FB27B18DB40033C4F3 /* LoginViewModel.swift */; };
 		0206040127B193AF0033C4F3 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0206040027B193AF0033C4F3 /* Authentication.swift */; };
+		02684D1A27C7FB550008F8BC /* SupplierOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02684D1927C7FB550008F8BC /* SupplierOnboardingView.swift */; };
+		02684D1D27C7FCC70008F8BC /* ChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02684D1C27C7FCC70008F8BC /* ChooseView.swift */; };
 		026DF28D27BEC14F00F3BE00 /* OnboardingTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DF28C27BEC14F00F3BE00 /* OnboardingTransitionView.swift */; };
 		027DE62027B3100E005AFBEC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027DE61F27B3100E005AFBEC /* HomeView.swift */; };
 		027DE62227B31942005AFBEC /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027DE62127B31942005AFBEC /* Shape.swift */; };
@@ -52,6 +54,8 @@
 		020603F727B18CDE0033C4F3 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		020603FB27B18DB40033C4F3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0206040027B193AF0033C4F3 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		02684D1927C7FB550008F8BC /* SupplierOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierOnboardingView.swift; sourceTree = "<group>"; };
+		02684D1C27C7FCC70008F8BC /* ChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseView.swift; sourceTree = "<group>"; };
 		026DF28C27BEC14F00F3BE00 /* OnboardingTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTransitionView.swift; sourceTree = "<group>"; };
 		027DE61F27B3100E005AFBEC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MotherTrucker/Views/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		027DE62127B31942005AFBEC /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
@@ -126,11 +130,21 @@
 				D9142CB227CA9173006C5079 /* Payments */,
 				D9C5A11F27BC3690002B12AE /* Home */,
 				D9C5A11E27BC367B002B12AE /* Login */,
-				D91F7B2227C55EEC00E77E2C /* Onboarding */,
+				02684D1B27C7FB7A0008F8BC /* Onboarding */,
 				D91AB85527B4539B0005ACA0 /* Components */,
 				D91F7B2327C5629B00E77E2C /* Messages */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		02684D1B27C7FB7A0008F8BC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				02F1CEC527BD730600A25C3E /* OnboardingView.swift */,
+				026DF28C27BEC14F00F3BE00 /* OnboardingTransitionView.swift */,
+				02684D1927C7FB550008F8BC /* SupplierOnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		027DE62327B3194C005AFBEC /* Shapes */ = {
@@ -253,10 +267,11 @@
 			isa = PBXGroup;
 			children = (
 				D9FA581227C53B1600B3B50D /* SplashScreenView.swift */,
-				D9FA581A27C53BDA00B3B50D /* ForgotPassView.swift */,
 				D9FA581427C53B7000B3B50D /* LandingView.swift */,
 				D9FA581827C53BC300B3B50D /* LoginView.swift */,
 				D956A7ED27B6E61000AEBE9B /* SignupView.swift */,
+				D9FA581A27C53BDA00B3B50D /* ForgotPassView.swift */,
+				02684D1C27C7FCC70008F8BC /* ChooseView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -358,6 +373,7 @@
 				D927069E27B4942100F53E2C /* NavBar.swift in Sources */,
 				020603FC27B18DB40033C4F3 /* LoginViewModel.swift in Sources */,
 				D9FA581E27C53D6200B3B50D /* SignupView.swift in Sources */,
+				02684D1D27C7FCC70008F8BC /* ChooseView.swift in Sources */,
 				D9A3DF2827B38E5600CCE64E /* ButtonView.swift in Sources */,
 				D9E387C827C802F70036C009 /* BottomBar.swift in Sources */,
 				D91F7B2527C562B100E77E2C /* MessagesView.swift in Sources */,
@@ -372,6 +388,7 @@
 				D9C5A12327BC36E3002B12AE /* BigCard.swift in Sources */,
 				D91AB85327B440EF0005ACA0 /* TextArea.swift in Sources */,
 				027DE62527B3198A005AFBEC /* Color Extension.swift in Sources */,
+				02684D1A27C7FB550008F8BC /* SupplierOnboardingView.swift in Sources */,
 				020603F827B18CDE0033C4F3 /* UIApplication + Extension.swift in Sources */,
 				D91AB85927B4546A0005ACA0 /* LoginCard.swift in Sources */,
 				0206040127B193AF0033C4F3 /* Authentication.swift in Sources */,

@@ -18,7 +18,8 @@ struct SignupView: View {
                 .offset(y: round(height * 0.092))
             VStack {
                 TitleText(text: "Create an Account")
-                    .padding(.trailing, 150)
+                    .padding(.trailing, 140)
+                    .frame(width: 350, height: 230)
                 
                 TextArea(placeholder: "Username or Email",
                          text: $emailCreds,
@@ -42,7 +43,7 @@ struct SignupView: View {
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                NavigationLink(destination: OnboardingView(width: width, height: height)){
+                NavigationLink(destination: ChooseView(width: width, height: height)){
                     ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
                         .padding(.bottom, 100)
                 }

@@ -8,16 +8,18 @@
 import SwiftUI
 
 // This View makes it onboaring screens only show once.
-struct OnboaringTransitionView: View {
+struct OnboaringTransitionView: View{
     var width, height: CGFloat
-    var onboarding: Bool
+    @State var onboarding: Bool
     
-    var body: some View {
-        VStack {
+    var body: some View{
+       
+        VStack{
+            
             if onboarding {
                 OnboardingView(width: width, height: height)
             } else {
-                HomeView(viewRouter: ViewRouter(), width: width, height: height)
+                HomeView(width: width, height: height)
                     .transition(.move(edge: .trailing))
             }
         }

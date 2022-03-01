@@ -20,51 +20,52 @@ struct HomeView: View {
     ]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            BigCard(width: width, height: height)
-                .padding(.leading)
-                .padding(.trailing)
-            
-            Text("Smart Contracts")
-                .fontWeight(.bold)
-                .font(.system(size: 25))
-                .padding()
-                .alignmentGuide(.leading) { d in d[.leading] + 8 }
-            
-            ScrollView {
-                VStack(alignment: .center, spacing: 20) {
-                    ForEach(testData, id: \.self) { listing in
-                        ListingView(width: width, height: height,
-                                    startAddress: listing.fromAddress,
-                                    endAddress: listing.destinationAddress,
-                                    timeFrame: listing.timeFrame, Compensation: listing.Compensation)
-                            .padding(.leading)
-                            .padding(.trailing)
+        ScrollView {
+            VStack(alignment: .leading) {
+                
+                BigCard(width: width, height: height)
+                    .padding(.leading)
+                    .padding(.trailing)
+                
+                Text("Smart Contracts")
+                    .fontWeight(.bold)
+                    .font(.system(size: 25))
+                    .padding()
+                    .alignmentGuide(.leading) { d in d[.leading] + 8 }
+                
+                ScrollView {
+                    VStack(alignment: .center, spacing: 20) {
+                        ForEach(testData, id: \.self) { listing in
+                            ListingView(width: width, height: height,
+                                        startAddress: listing.fromAddress,
+                                        endAddress: listing.destinationAddress,
+                                        timeFrame: listing.timeFrame, Compensation: listing.Compensation)
+                                .padding(.leading)
+                                .padding(.trailing)
+                        }
                     }
+                }
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {authentication.updatedValidation(success: false)},label: {
+                        Image(systemName: "list.bullet")
+                            .padding(.leading, 5.0)
+                            .padding(.bottom, 7.0)
+                            .padding(.top, 2.0)
+                            .imageScale(.large)
+                    })
+                    .buttonStyle(.plain)
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Home")
+                        .fontWeight(.bold)
                 }
             }
             Spacer()
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    authentication.updatedValidation(success: false)
-                } label: {
-                    Image("Vector")
-                        .font(.system(size: 30))
-                }
-            }
-            
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("Home")
-                    .fontWeight(.bold)
-                    .font(.system(size: 35))
-            }
-        }
-        .navigationBarBackButtonHidden(true)
     }
 }
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
