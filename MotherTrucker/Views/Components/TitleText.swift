@@ -15,7 +15,6 @@ struct TitleText: View {
             .fontWeight(.bold)
             .font(.largeTitle)
             .multilineTextAlignment(.leading)
-            .frame(width: 200, height: 200)
             .dynamicTypeSize(.accessibility1)
             
     }

@@ -17,17 +17,20 @@ struct ForgotPassView: View {
         ZStack {
             VStack {
                 Spacer()
-                TitleText(text: "Forgot Password")
-                    .padding(.trailing, 150)
-                    .padding(.top, 20)
+                TitleText(text: "Forgot Password ?")
+                    .padding(.trailing, 120)
+                    .padding(.bottom, 40)
+                    .padding(.leading, 10)
+                    .padding(.top, 60)
                 ZStack {
                     CardBackground(width: width, height: height)
+                    
                     VStack {
                         TextArea(image: "envelope.fill", placeholder: "Enter your email address",
                                  text: $text, width: width, height: height)
                             .padding(.top, 30)
                         
-                        MessageView()
+                        FPMessageView()
                         
                         ButtonView(text: "Send Code", width: width, height: height, disabled: false)
                             .padding()
@@ -37,14 +40,13 @@ struct ForgotPassView: View {
             }.ignoresSafeArea()
         }
         .navigationBarBackButtonHidden(true)
-        .edgesIgnoringSafeArea(.top)
         .toolbar {
             NavBar()
         }
     }
 }
 
-struct MessageView: View {
+struct FPMessageView: View {
     var body: some View {
         Group {
             Text("*")

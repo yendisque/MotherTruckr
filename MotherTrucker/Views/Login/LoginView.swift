@@ -17,11 +17,19 @@ struct LoginView: View {
             BackgroundTriangle(width: screenWidth, height: screenHeight)
                 .offset(y: round(screenHeight * 0.092))
             VStack(alignment: .center) {
-                TitleText(text: "Welcome Back")
+                TitleText(text: "Welcome Back !")
                     .padding(.top)
-                    .padding(.trailing, 150)
-                    .offset(y: -50)
+                    .padding(.trailing, 140)
+                    .frame(width: 350, height: 125)
+                    .padding(.bottom, 60)
+                    
                 
+                Text("Enter Your Info")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.trailing, 160)
+                    .padding(.bottom, 15)
+                    
                 // Text Fields
                 LoginComponents(loginVM: loginVM, screenWidth: screenWidth, screenHeight: screenHeight)
                 
@@ -62,7 +70,6 @@ struct LoginButton: View {
                 ButtonView(text: "Login", width: width, height: height, disabled: false)
             }
         }
-//        }
     }
 }
 
@@ -74,7 +81,7 @@ struct LoginComponents: View {
         TextArea(placeholder: "Username or Email",
                  text: $loginVM.credentials.email,
                  width: screenWidth, height: screenHeight)
-            .padding(31)
+            .padding(.bottom, 20)
 
         SecureTextArea(placeholder: "Password",
                        text: $loginVM.credentials.password,
@@ -84,7 +91,6 @@ struct LoginComponents: View {
         NavigationLink(destination: ForgotPassView(width: screenWidth, height: screenHeight)) {
             Text("Forgot Password?")
                 .font(.system(size: 15))
-                .fontWeight(.bold)
                 .padding()
                 
         }.buttonStyle(.plain)

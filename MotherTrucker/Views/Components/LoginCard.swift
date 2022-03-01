@@ -14,7 +14,7 @@ struct LoginCardView: View {
         ZStack {
             Color.white
             VStack(alignment: .center) {
-                Text("Or sign in with")
+                Text("Or Sign In With")
                     .foregroundColor(Color.BackgroundBlack)
                     .bold()
                     .padding()

@@ -1,13 +1,13 @@
 //
-//  OnboardingView.swift
+//  SupplierOnboardingView.swift
 //  MotherTrucker
 //
-//  Created by Jason Coawette on 2/16/22.
+//  Created by Jason Coawette on 2/24/22.
 //
 
 import SwiftUI
 
-struct OnboardingView: View{
+struct SupplierOnboardingView: View{
     var width, height: CGFloat
     
     var body: some View{
@@ -19,18 +19,18 @@ struct OnboardingView: View{
                 .frame(width: 320, height: 320)
                 .position(x: 207, y: 200)
             
-            Text("Apply For Smart Contracts")
+            Text("Write Smart Contracts")
                 .font(.title)
                 .fontWeight(.bold)
-                .frame(width: 300)
-                .position(x: 135, y: 412)
+                .frame(width: 200)
+                .position(x: 120, y: 412)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur, tortor sed maximus consectetur, tellus ante consequat")
                 .frame(width: 300, alignment: .leading)
                 .position(x: 195, y: 512)
             
             VStack{
-                NavigationLink(destination: OnboardingSupplyView(width: width, height: height)){
+                NavigationLink(destination: SupplierOnboardingSupplyView(width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -45,12 +45,16 @@ struct OnboardingView: View{
                 .position(x: 300, y: 680)
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            NavBar()
+        }
     }
 }
 
 
 
-struct OnboardingSupplyView: View{
+struct SupplierOnboardingSupplyView: View{
     var width, height: CGFloat
     
     var body: some View{
@@ -62,18 +66,18 @@ struct OnboardingSupplyView: View{
                 .frame(width: 320, height: 320)
                 .position(x: 207, y: 200)
             
-            Text("Pick Up and Drop Off Supplies")
+            Text("Meet Demand and Beat The Shortages")
                 .font(.title)
                 .fontWeight(.bold)
-                .frame(width: 300)
-                .position(x: 135, y: 412)
+                .frame(width: 280)
+                .position(x: 165, y: 412)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur, tortor sed maximus consectetur, tellus ante consequat")
                 .frame(width: 300, alignment: .leading)
                 .position(x: 195, y: 512)
             
             VStack{
-                NavigationLink(destination: OnboardingPayView(onboarding: false, width: width, height: height)){
+                NavigationLink(destination: SupplierOnboardingPayView(onboarding: false, width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -89,12 +93,16 @@ struct OnboardingSupplyView: View{
             .position(x: 300, y: 680)
             
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            NavBar()
+        }
     }
 }
 
 
 
-struct OnboardingPayView: View{
+struct SupplierOnboardingPayView: View{
     @State var onboarding: Bool
     var width, height: CGFloat
     
@@ -108,11 +116,11 @@ struct OnboardingPayView: View{
                 .frame(width: 320, height: 320)
                 .position(x: 207, y: 200)
             
-            Text("Get Paid those Fat Stacks")
+            Text("Save On Logistics")
                 .font(.title)
                 .fontWeight(.bold)
-                .frame(width: 300)
-                .position(x: 135, y: 412)
+                .frame(width: 200)
+                .position(x: 98, y: 412)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur, tortor sed maximus consectetur, tellus ante consequat")
                 .frame(width: 300, alignment: .leading)
@@ -139,14 +147,19 @@ struct OnboardingPayView: View{
             .position(x: 300, y: 680)
             
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            NavBar()
+        }
     }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
+
+struct SupplierOnboardingPayView_Previews: PreviewProvider {
     static var previews: some View {
         
         GeometryReader { geo in
-            OnboardingPayView(onboarding: true, width: 414, height: 818)
+            SupplierOnboardingPayView(onboarding: false, width: 414, height: 818)
         }
     }
 }

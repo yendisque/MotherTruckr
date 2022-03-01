@@ -19,67 +19,74 @@ struct HomeView: View {
     ]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            BigCard(width: width, height: height)
-                .padding(.leading)
-                .padding(.trailing)
-            
-            Text("Smart Contracts")
-                .fontWeight(.bold)
-                .font(.system(size: 25))
-                .padding()
-                .alignmentGuide(.leading) { d in d[.leading] + 8 }
-            
-            ScrollView {
-                VStack(alignment: .center, spacing: 20) {
-                    ForEach(testData, id: \.self) { listing in
-                        ListingView(width: width, height: height,
-                                    startAddress: listing.fromAddress,
-                                    endAddress: listing.destinationAddress,
-                                    timeFrame: listing.timeFrame, Compensation: listing.Compensation)
-                            .padding(.leading)
-                            .padding(.trailing)
+        ScrollView {
+            VStack(alignment: .leading) {
+                
+                BigCard(width: width, height: height)
+                    .padding(.leading)
+                    .padding(.trailing)
+                
+                Text("Smart Contracts")
+                    .fontWeight(.bold)
+                    .font(.system(size: 25))
+                    .padding()
+                    .alignmentGuide(.leading) { d in d[.leading] + 8 }
+                
+                ScrollView {
+                    VStack(alignment: .center, spacing: 20) {
+                        ForEach(testData, id: \.self) { listing in
+                            ListingView(width: width, height: height,
+                                        startAddress: listing.fromAddress,
+                                        endAddress: listing.destinationAddress,
+                                        timeFrame: listing.timeFrame, Compensation: listing.Compensation)
+                                .padding(.leading)
+                                .padding(.trailing)
+                        }
                     }
                 }
-            }
-        }.toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    authentication.updatedValidation(success: false)
-                } label: {
-                    Image("Vector")
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {authentication.updatedValidation(success: false)},label: {
+                        Image(systemName: "list.bullet")
+                            .padding(.leading, 5.0)
+                            .padding(.bottom, 7.0)
+                            .padding(.top, 2.0)
+                            .imageScale(.large)
+                    })
+                    .buttonStyle(.plain)
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Home")
+                        .fontWeight(.bold)
                         .font(.system(size: 30))
+                        .padding(.leading, 5.0)
+                        .padding(.bottom, 12.0)
+                        .padding(.top, 2.0)
+                }
+                
+                ToolbarItem(placement: .bottomBar) {
+                    BottomBar()
                 }
             }
-            
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("Home")
-                    .fontWeight(.bold)
-                    .font(.system(size: 35))
-            }
-            
-            ToolbarItem(placement: .bottomBar) {
-                BottomBar()
-            }
-        }
         .navigationBarBackButtonHidden(true)
+        }
     }
 }
 
 struct BottomBar: View {
     var body: some View {
-        HStack(spacing: 50) {
-            Image(systemName: "mappin")
+        HStack(spacing: 60) {
+            Image(systemName: "paperplane")
                 .imageScale(.large)
             Image(systemName: "magnifyingglass")
                 .imageScale(.large)
-            LinearGradient(gradient:Gradient(colors: [Color(hex: 0x2ED573),
-                                                      Color(hex: 0x7BED9F)]),
-                                             startPoint: .bottomTrailing, endPoint: .topLeading)
-                .mask(Image(systemName: "house").imageScale(.large))
-            Image(systemName: "hexagon")
+            LinearGradient(gradient:Gradient(colors: [Color(hex: 0x2ED573), Color(hex: 0x7BED9F)]), startPoint: .bottomTrailing, endPoint: .topLeading)
+                .mask(Image(systemName: "house")
+                        .imageScale(.large))
+            Image(systemName: "dollarsign.circle")
                 .imageScale(.large)
-            Image(systemName: "message")
+            Image(systemName: "text.bubble")
                 .imageScale(.large)
         }
     }
