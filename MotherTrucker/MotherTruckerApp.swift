@@ -8,19 +8,18 @@
 import SwiftUI
 
 @main
-struct MotherTruckerApp: App
-{
+struct MotherTruckerApp: App {
     @StateObject var authentication = Authentication()
-    var body: some Scene
-    {
-        WindowGroup
-        {
+    @StateObject var viewRouter = ViewRouter()
+    
+    var body: some Scene {
+        WindowGroup {
             GeometryReader { geo in
                 if authentication.isValidated {
-                    HomeView(width: geo.size.width, height: geo.size.height)
+                    RoutingView(viewRouter: viewRouter, width: geo.size.width, height: geo.size.height)
                         .environmentObject(authentication)
                 } else {
-                    LandingView(screenWidth: geo.size.width, screenHeight: geo.size.height)
+                    LandingView(viewRouter: viewRouter, screenWidth: geo.size.width, screenHeight: geo.size.height)
                         .environmentObject(authentication)
                 }
             }

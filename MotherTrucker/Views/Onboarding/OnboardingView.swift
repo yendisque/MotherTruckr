@@ -13,7 +13,6 @@ struct OnboardingView: View{
     var body: some View{
         
         ZStack{
-            
             Image("ContractOBS")
                 .resizable()
                 .frame(width: 320, height: 320)
@@ -39,7 +38,6 @@ struct OnboardingView: View{
                         .background(Color(hex: 0xA4EDC2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-                    
                 }
                 .frame(width: 158, height: 52)
                 .position(x: 300, y: 680)
@@ -60,7 +58,6 @@ struct OnboardingSupplyView: View{
     var body: some View{
        
         ZStack{
-            
             Image("BoxOBS")
                 .resizable()
                 .frame(width: 320, height: 320)
@@ -86,12 +83,10 @@ struct OnboardingSupplyView: View{
                         .background(Color(hex: 0xA4EDC2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-                    
                 }
             }
             .frame(width: 158, height: 52)
             .position(x: 300, y: 680)
-            
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -100,17 +95,12 @@ struct OnboardingSupplyView: View{
     }
 }
 
-
-
 struct OnboardingPayView: View{
     @State var onboarding: Bool
     var width, height: CGFloat
     
     var body: some View{
-        
-        
         ZStack{
-            
             Image("PaidOBS")
                 .resizable()
                 .frame(width: 320, height: 320)
@@ -140,12 +130,10 @@ struct OnboardingPayView: View{
                         .background(Color(hex: 0xA4EDC2))
                         .foregroundColor(.black)
                         .cornerRadius(10)
-                    
                 }
             }
             .frame(width: 158, height: 52)
             .position(x: 300, y: 680)
-            
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -156,7 +144,6 @@ struct OnboardingPayView: View{
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        
         GeometryReader { geo in
             OnboardingPayView(onboarding: true, width: 414, height: 818)
         }

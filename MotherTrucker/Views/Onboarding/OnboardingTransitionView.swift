@@ -21,9 +21,6 @@ struct OnboaringTransitionView: View{
             } else {
                 HomeView(width: width, height: height)
                     .transition(.move(edge: .trailing))
-            
-                
-                
             }
         }
         .animation(.easeIn, value: onboarding)

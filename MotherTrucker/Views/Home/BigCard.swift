@@ -20,10 +20,8 @@ struct BigCard: View {
                 .foregroundColor(.white)
                 .padding(.bottom, 240)
                 .padding(.trailing, 150)
-                .padding()
         }
         .frame(width: round(width * 0.8695), height: round(height * 0.4054))
-        .background()
         .cornerRadius(20)
     }
 }
