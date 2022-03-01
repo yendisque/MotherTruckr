@@ -8,6 +8,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authentication: Authentication
+    @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
     var testData = [
         ListingModel(fromAddress: "8504 W Sethane Rd.",
@@ -59,35 +60,9 @@ struct HomeView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Home")
                         .fontWeight(.bold)
-                        .font(.system(size: 30))
-                        .padding(.leading, 5.0)
-                        .padding(.bottom, 12.0)
-                        .padding(.top, 2.0)
-                }
-                
-                ToolbarItem(placement: .bottomBar) {
-                    BottomBar()
                 }
             }
-        .navigationBarBackButtonHidden(true)
-        }
-    }
-}
-
-struct BottomBar: View {
-    var body: some View {
-        HStack(spacing: 60) {
-            Image(systemName: "paperplane")
-                .imageScale(.large)
-            Image(systemName: "magnifyingglass")
-                .imageScale(.large)
-            LinearGradient(gradient:Gradient(colors: [Color(hex: 0x2ED573), Color(hex: 0x7BED9F)]), startPoint: .bottomTrailing, endPoint: .topLeading)
-                .mask(Image(systemName: "house")
-                        .imageScale(.large))
-            Image(systemName: "dollarsign.circle")
-                .imageScale(.large)
-            Image(systemName: "text.bubble")
-                .imageScale(.large)
+            Spacer()
         }
     }
 }
@@ -95,7 +70,7 @@ struct BottomBar: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            HomeView(width: geo.size.width, height: geo.size.height)
+            HomeView(viewRouter: ViewRouter(), width: geo.size.width, height: geo.size.height)
         }
     }
 }

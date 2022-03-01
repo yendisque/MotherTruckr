@@ -44,12 +44,9 @@ struct SignupView: View {
                     .padding()
                 
                 NavigationLink(destination: ChooseView(width: width, height: height)){
-                    
                     ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
                         .padding(.bottom, 100)
                 }
-             
-                
             }
         }
         .navigationBarBackButtonHidden(true)
