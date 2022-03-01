@@ -25,11 +25,12 @@ struct PaymentsView: View {
         ScrollView {
             VStack(alignment: .center) {
                 AddPaymentMethod(width: width, height: height)
+                    .padding(10)
                 
                 ForEach(payments, id: \.self) { pmt in
                     VStack {
                         PaymentMethodView(width: width, height: height, backgroundColor: pmt.backgroundColor, paymentName: pmt.paymnetName, balance: pmt.balance)
-                            .padding()
+                            .padding(10)
                     }
                 }
                 

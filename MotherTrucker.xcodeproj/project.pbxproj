@@ -127,12 +127,12 @@
 			children = (
 				D95D20E727CD1FDA00BBCC85 /* Tracking */,
 				D9142CB527CACDCC006C5079 /* Search */,
+				D91F7B2327C5629B00E77E2C /* Messages */,
 				D9142CB227CA9173006C5079 /* Payments */,
 				D9C5A11F27BC3690002B12AE /* Home */,
 				D9C5A11E27BC367B002B12AE /* Login */,
 				02684D1B27C7FB7A0008F8BC /* Onboarding */,
 				D91AB85527B4539B0005ACA0 /* Components */,
-				D91F7B2327C5629B00E77E2C /* Messages */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,15 +224,6 @@
 				D9E387C727C802F70036C009 /* BottomBar.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		D91F7B2227C55EEC00E77E2C /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				02F1CEC527BD730600A25C3E /* OnboardingView.swift */,
-				026DF28C27BEC14F00F3BE00 /* OnboardingTransitionView.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		D91F7B2327C5629B00E77E2C /* Messages */ = {

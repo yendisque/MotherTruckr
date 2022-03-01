@@ -20,7 +20,7 @@ struct RoutingView: View {
                     case .search:
                         SearchView(width: width, height: height)
                     case .home:
-                        HomeView(viewRouter: viewRouter, width: width, height: height)
+                        HomeView(width: width, height: height)
                     case .chainlink:
                         PaymentsView(width: width, height: height)
                     case .messages:

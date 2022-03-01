@@ -23,8 +23,8 @@ struct BottomBar: View {
                     TabBarIcon(viewRouter: viewRouter, iconName: "Map", systemName: "mappin", assignedPage: .map)
                     TabBarIcon(viewRouter: viewRouter, iconName: "Search", systemName: "magnifyingglass", assignedPage: .search)
                     TabBarIcon(viewRouter: viewRouter, iconName: "Home", systemName: "house", assignedPage: .home)
-                    TabBarIcon(viewRouter: viewRouter, iconName: "Chainlink", systemName: "hexagon", assignedPage: .chainlink)
-                    TabBarIcon(viewRouter: viewRouter, iconName: "Messages", systemName: "message", assignedPage: .messages)
+                    TabBarIcon(viewRouter: viewRouter, iconName: "Chainlink", systemName: "dollarsign.circle", assignedPage: .chainlink)
+                    TabBarIcon(viewRouter: viewRouter, iconName: "Messages", systemName: "text.bubble", assignedPage: .messages)
                 }
             }
         }

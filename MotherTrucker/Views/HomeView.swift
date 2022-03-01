@@ -8,7 +8,6 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authentication: Authentication
-    @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
     var testData = [
         ListingModel(fromAddress: "8504 W Sethane Rd.",
@@ -70,7 +69,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            HomeView(viewRouter: ViewRouter(), width: geo.size.width, height: geo.size.height)
+            HomeView(width: geo.size.width, height: geo.size.height)
         }
     }
 }
