@@ -74,8 +74,11 @@ struct MessagesView: View {
                     Button {
                         authentication.updatedValidation(success: false)
                     } label: {
-                        Image("Vector")
-                            .font(.system(size: 30))
+                        Image(systemName: "list.bullet")
+                            .padding(.leading, 5.0)
+                            .padding(.bottom, 7.0)
+                            .padding(.top, 2.0)
+                            .imageScale(.large)
                     }
                 }
 

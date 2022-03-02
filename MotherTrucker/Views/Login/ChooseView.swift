@@ -7,25 +7,22 @@
 
 import SwiftUI
 
-struct ChooseView: View{
+struct ChooseView: View {
+    @Binding var showingModal: Bool
     var width, height: CGFloat
     
     var body: some View{
-       
         VStack {
-            
             TitleText(text: "Who Are You ?")
                 .padding(.top, 20)
                 .padding(.bottom, 105)
                 .padding(.trailing, 150)
                 .frame(width: 350, height: 230)
                 
-                
             Image("chooseImage")
                 .resizable()
                 .frame(width: 350, height: 260, alignment: .center)
                 .padding(.top, -80)
-            
             
             Text("Dont Worry You Can Change This Later")
                 .font(.subheadline)
@@ -34,24 +31,14 @@ struct ChooseView: View{
                 .frame(width: 300, height: 50, alignment: .center)
                 .padding(35.0)
                 
-            HStack{
-                    
-                NavigationLink(destination: OnboardingView(width: width, height: height)){
-                        
+            HStack {
+                NavigationLink(destination: OnboardingView(showingModal: $showingModal, width: width, height: height)){
                     ChooseButtonView(text: "Trucker", width: width, height: height)
-                        
-                            
                 }
                 .padding()
-                    
-                    
-                    
-                    
-                NavigationLink(destination: SupplierOnboardingView(width: width, height: height)){
-                        
+                
+                NavigationLink(destination: SupplierOnboardingView(showingModal: $showingModal, width: width, height: height)) {
                     ChooseButtonView(text: "Supplier", width: width, height: height)
-                            
-                            
                 }
                 .padding()
             }
@@ -59,8 +46,6 @@ struct ChooseView: View{
             .padding(.top)
             .padding(.leading, 12)
             .padding(.trailing)
-            
-            
         }
         .padding(.bottom, 260)
         .navigationBarBackButtonHidden(true)
@@ -92,7 +77,7 @@ struct ChooseButtonView: View{
 struct ChooseView_Preview: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            ChooseView(width: 414, height: 818)
+//            ChooseView(width: 414, height: 818)
         }
     }
 }

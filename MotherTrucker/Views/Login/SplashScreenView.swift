@@ -12,11 +12,12 @@ struct SplashScreenView: View {
     @State var animate = false
     @State var endSplash = false
     var width, height: CGFloat
+    @State var x: Bool = false // ignore this variable for now
     
     var body: some View {
         ZStack {
             
-            OnboardingView(width: width, height: height)
+            OnboardingView(showingModal: $x, width: width, height: height)
             
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [ Color(hex: 0x7BED9F), Color(hex: 0x07C656) ]), startPoint: .topLeading, endPoint: .bottomTrailing)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @Binding var showingModal: Bool
     @StateObject var viewRouter: ViewRouter
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
@@ -37,7 +38,7 @@ struct LoginView: View {
                 Spacer().frame(height: 64)
                 
                 // Log In Button
-                LoginButton(viewRouter: viewRouter, loginVM: loginVM, width: screenWidth, height: screenHeight)
+                LoginButton(showingModal: $showingModal, viewRouter: viewRouter, loginVM: loginVM, width: screenWidth, height: screenHeight)
             }
         }
         .ignoresSafeArea()
@@ -53,6 +54,7 @@ struct LoginView: View {
 }
 
 struct LoginButton: View {
+    @Binding var showingModal: Bool
     @StateObject var viewRouter: ViewRouter
     @StateObject var loginVM: LoginViewModel
     @EnvironmentObject var authentication: Authentication
@@ -61,6 +63,7 @@ struct LoginButton: View {
     var body: some View {
         Button {
             authentication.isValidated = true
+            showingModal = false
         } label: {
             if loginVM.showProgressView {
                 ProgressView()
@@ -101,7 +104,7 @@ struct LoginComponents: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            LoginView(viewRouter: ViewRouter(), screenWidth: geo.size.width, screenHeight: geo.size.height)
+//            LoginView(showingModal: true, viewRouter: ViewRouter(), screenWidth: geo.size.width, screenHeight: geo.size.height)
         }
     }
 }

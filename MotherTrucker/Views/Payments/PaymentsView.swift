@@ -29,11 +29,13 @@ struct PaymentsView: View {
                 ForEach(payments, id: \.self) { pmt in
                     VStack {
                         PaymentMethodView(width: width, height: height, backgroundColor: pmt.backgroundColor, paymentName: pmt.paymnetName, balance: pmt.balance)
+                            .shadow(radius: 5)
                             .padding()
                     }
                 }
                 
                 CreditCardView(width: width, height: height, balance: 2000000)
+                    .shadow(radius: 5)
                     .padding(.top, 40)
             }
             .offset(y: -25)
@@ -42,8 +44,11 @@ struct PaymentsView: View {
                     Button {
                         //authentication.updatedValidation(success: false)
                     } label: {
-                        Image("Vector")
-                            .font(.system(size: 30))
+                        Image(systemName: "list.bullet")
+                            .padding(.leading, 5.0)
+                            .padding(.bottom, 7.0)
+                            .padding(.top, 2.0)
+                            .imageScale(.large)
                     }
                 }
                 

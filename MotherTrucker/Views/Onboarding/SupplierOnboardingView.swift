@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SupplierOnboardingView: View{
+struct SupplierOnboardingView: View {
+    @Binding var showingModal: Bool
     var width, height: CGFloat
     
     var body: some View{
@@ -30,7 +31,7 @@ struct SupplierOnboardingView: View{
                 .position(x: 195, y: 512)
             
             VStack{
-                NavigationLink(destination: SupplierOnboardingSupplyView(width: width, height: height)){
+                NavigationLink(destination: SupplierOnboardingSupplyView(showingModal: $showingModal, width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -54,7 +55,8 @@ struct SupplierOnboardingView: View{
 
 
 
-struct SupplierOnboardingSupplyView: View{
+struct SupplierOnboardingSupplyView: View {
+    @Binding var showingModal: Bool
     var width, height: CGFloat
     
     var body: some View{
@@ -77,7 +79,7 @@ struct SupplierOnboardingSupplyView: View{
                 .position(x: 195, y: 512)
             
             VStack{
-                NavigationLink(destination: SupplierOnboardingPayView(onboarding: false, width: width, height: height)){
+                NavigationLink(destination: SupplierOnboardingPayView(showingModal: $showingModal, onboarding: false, width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -102,7 +104,8 @@ struct SupplierOnboardingSupplyView: View{
 
 
 
-struct SupplierOnboardingPayView: View{
+struct SupplierOnboardingPayView: View {
+    @Binding var showingModal: Bool
     @State var onboarding: Bool
     var width, height: CGFloat
     
@@ -128,9 +131,8 @@ struct SupplierOnboardingPayView: View{
             
             VStack{
                 Button(action: {
-                    
                     onboarding = false
-                    
+                    showingModal.toggle()
                 }) {
                     Text("Truck Me!")
                         .font(.title2)
@@ -159,7 +161,7 @@ struct SupplierOnboardingPayView_Previews: PreviewProvider {
     static var previews: some View {
         
         GeometryReader { geo in
-            SupplierOnboardingPayView(onboarding: false, width: 414, height: 818)
+//            SupplierOnboardingPayView(onboarding: false, width: 414, height: 818)
         }
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SignupView: View {
+    @EnvironmentObject var authentication: Authentication
+    @Binding var showingModal: Bool
     @State var emailCreds: String = ""
     @State var passCreds: String = ""
     var width, height: CGFloat
@@ -43,9 +45,11 @@ struct SignupView: View {
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                NavigationLink(destination: ChooseView(width: width, height: height)){
+                NavigationLink(destination: ChooseView(showingModal: $showingModal, width: width, height: height)){
                     ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
                         .padding(.bottom, 100)
+                }.onSubmit {
+                    authentication.isValidated = true
                 }
             }
         }
@@ -60,7 +64,7 @@ struct SignupView: View {
 struct SignupView_Preview: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            SignupView(width: 414, height: 818)
+//            SignupView(width: 414, height: 818)
         }
     }
 }

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct OnboardingView: View{
+struct OnboardingView: View {
+    @Binding var showingModal: Bool
     var width, height: CGFloat
     
     var body: some View{
@@ -29,7 +30,7 @@ struct OnboardingView: View{
                 .position(x: 195, y: 512)
             
             VStack{
-                NavigationLink(destination: OnboardingSupplyView(width: width, height: height)){
+                NavigationLink(destination: OnboardingSupplyView(showingModal: $showingModal, width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -52,7 +53,8 @@ struct OnboardingView: View{
 
 
 
-struct OnboardingSupplyView: View{
+struct OnboardingSupplyView: View {
+    @Binding var showingModal: Bool
     var width, height: CGFloat
     
     var body: some View{
@@ -74,7 +76,7 @@ struct OnboardingSupplyView: View{
                 .position(x: 195, y: 512)
             
             VStack{
-                NavigationLink(destination: OnboardingPayView(onboarding: false, width: width, height: height)){
+                NavigationLink(destination: OnboardingPayView(showingModal: $showingModal, onboarding: false, width: width, height: height)){
                     Text("Next")
                         .font(.title2)
                         .fontWeight(.medium)
@@ -95,7 +97,8 @@ struct OnboardingSupplyView: View{
     }
 }
 
-struct OnboardingPayView: View{
+struct OnboardingPayView: View {
+    @Binding var showingModal: Bool
     @State var onboarding: Bool
     var width, height: CGFloat
     
@@ -118,9 +121,8 @@ struct OnboardingPayView: View{
             
             VStack{
                 Button(action: {
-                    
                     onboarding = false
-                    
+                    showingModal.toggle()
                 }) {
                     Text("Truck Me!")
                         .font(.title2)
@@ -145,7 +147,7 @@ struct OnboardingPayView: View{
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            OnboardingPayView(onboarding: true, width: 414, height: 818)
+//            OnboardingPayView(onboarding: true, width: 414, height: 818)
         }
     }
 }

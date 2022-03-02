@@ -21,6 +21,8 @@ struct LandingView: View {
 struct LandingContent: View {
     @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
+    @State private var isShowingLogin = false
+    @State private var isShowingSignup = false
     
     var body: some View {
         ZStack {
@@ -39,22 +41,29 @@ struct LandingContent: View {
                     .padding(.top, 100)
 
                 VStack {
-                    NavigationLink(destination: SignupView(width: width, height: height)) {
+                    Button {
+                        isShowingSignup.toggle()
+                    } label: {
                         ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
+                    }.sheet(isPresented: $isShowingSignup) {
+                        NavigationView {
+                            SignupView(showingModal: $isShowingSignup, width: width, height: height)
+                        }
                     }.padding(.bottom, 20)
                     
                     Text("Already have an account?")
-
-                    NavigationLink(destination: LoginView(viewRouter: viewRouter, screenWidth: width, screenHeight: height)) {
-                        // The disabled argument should be connected with the backend at some point, not sure
-                        // I've just arbitarily set it to false right now
+                    
+                    Button {
+                        isShowingLogin.toggle()
+                    } label: {
                         ButtonView(text: "Login", width: width, height: height, disabled: false)
+                    }.sheet(isPresented: $isShowingLogin) {
+                        LoginView(showingModal: $isShowingLogin, viewRouter: viewRouter, screenWidth: width, screenHeight: height)
                     }
+
                     Spacer()
                 }
                 .padding(.bottom, 210)
-                
-            
             }
         }
     }

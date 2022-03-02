@@ -11,15 +11,15 @@ import SwiftUI
 struct OnboaringTransitionView: View{
     var width, height: CGFloat
     @State var onboarding: Bool
+    @StateObject var viewRouter = ViewRouter()
+    @State var x = true // ignore this variable for now
     
     var body: some View{
-       
-        VStack{
-            
+        VStack {
             if onboarding {
-                OnboardingView(width: width, height: height)
+                OnboardingView(showingModal: $x, width: width, height: height)
             } else {
-                HomeView(width: width, height: height)
+                HomeView(viewRouter: viewRouter, width: width, height: height)
                     .transition(.move(edge: .trailing))
             }
         }

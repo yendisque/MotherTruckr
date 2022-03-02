@@ -60,6 +60,7 @@ struct HomeView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text("Home")
                         .fontWeight(.bold)
+                        .font(.system(size: 35))
                 }
             }
             Spacer()
