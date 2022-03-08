@@ -9,16 +9,19 @@ import SwiftUI
 
 struct LandingView: View {
     @StateObject var viewRouter: ViewRouter
+    @EnvironmentObject var authentication: Authentication
     var screenWidth, screenHeight: CGFloat
     
     var body: some View {
         NavigationView {
             LandingContent(viewRouter: viewRouter, width: screenWidth, height: screenHeight)
         }.ignoresSafeArea(.all)
+        .environmentObject(authentication)
     }
 }
 
 struct LandingContent: View {
+    @EnvironmentObject var authentication: Authentication
     @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
     @State private var isShowingLogin = false
@@ -48,7 +51,7 @@ struct LandingContent: View {
                     }.sheet(isPresented: $isShowingSignup) {
                         NavigationView {
                             SignupView(showingModal: $isShowingSignup, width: width, height: height)
-                        }
+                        }.environmentObject(authentication)
                     }.padding(.bottom, 20)
                     
                     Text("Already have an account?")

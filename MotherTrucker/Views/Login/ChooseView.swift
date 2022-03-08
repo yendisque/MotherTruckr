@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ChooseView: View {
+    @Binding var auth: Bool
     @Binding var showingModal: Bool
     var width, height: CGFloat
     
@@ -52,6 +53,9 @@ struct ChooseView: View {
         .toolbar {
             NavBar()
         }
+//        .onAppear {
+//            auth = true
+//        }
     }
 }
 

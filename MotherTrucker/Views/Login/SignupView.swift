@@ -45,11 +45,9 @@ struct SignupView: View {
                     .multilineTextAlignment(.center)
                     .padding()
                 
-                NavigationLink(destination: ChooseView(showingModal: $showingModal, width: width, height: height)){
+                NavigationLink(destination: ChooseView(auth: $authentication.isValidated, showingModal: $showingModal, width: width, height: height)){
                     ButtonView(text: "Sign Up", width: width, height: height, disabled: false)
                         .padding(.bottom, 100)
-                }.onSubmit {
-                    authentication.isValidated = true
                 }
             }
         }
