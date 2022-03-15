@@ -10,6 +10,7 @@ import SwiftUI
 struct RoutingView: View {
     @StateObject var viewRouter: ViewRouter
     var width, height: CGFloat
+    @State var showingMenu: Bool = false
     
     var body: some View {
         NavigationView {
@@ -20,7 +21,7 @@ struct RoutingView: View {
                     case .search:
                         SearchView(width: width, height: height)
                     case .home:
-                        HomeView(viewRouter: viewRouter, width: width, height: height)
+                        HomeView(viewRouter: viewRouter, width: width, height: height, showSideMenu: $showingMenu)
                     case .chainlink:
                         PaymentsView(width: width, height: height)
                     case .messages:
@@ -29,6 +30,7 @@ struct RoutingView: View {
             }.toolbar {
                 ToolbarItem(placement: .bottomBar) {
                     BottomBar(viewRouter: viewRouter, width: width, height: height)
+                        .opacity(showingMenu ? 0 : 1)
                 }
             }
         }

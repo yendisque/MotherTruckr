@@ -13,13 +13,14 @@ struct OnboaringTransitionView: View{
     @State var onboarding: Bool
     @StateObject var viewRouter = ViewRouter()
     @State var x = true // ignore this variable for now
+    @State var showMenu: Bool
     
     var body: some View{
         VStack {
             if onboarding {
                 OnboardingView(showingModal: $x, width: width, height: height)
             } else {
-                HomeView(viewRouter: viewRouter, width: width, height: height)
+                HomeView(viewRouter: viewRouter, width: width, height: height, showSideMenu: $showMenu)
                     .transition(.move(edge: .trailing))
             }
         }

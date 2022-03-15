@@ -29,6 +29,7 @@
 		D91AB85927B4546A0005ACA0 /* LoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91AB85827B4546A0005ACA0 /* LoginCard.swift */; };
 		D91F7B2527C562B100E77E2C /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91F7B2427C562B100E77E2C /* MessagesView.swift */; };
 		D927069E27B4942100F53E2C /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D927069D27B4942100F53E2C /* NavBar.swift */; };
+		D93E3A3D27DA88F800D2AE35 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E3A3C27DA88F800D2AE35 /* MenuView.swift */; };
 		D956A7F027B6F09500AEBE9B /* TitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D956A7EF27B6F09500AEBE9B /* TitleText.swift */; };
 		D95D20E927CD1FE400BBCC85 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D20E827CD1FE400BBCC85 /* Tracking.swift */; };
 		D95D210227CD5EA800BBCC85 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D20F627CD5EA800BBCC85 /* Roboto-Regular.ttf */; };
@@ -36,6 +37,8 @@
 		D95D210627CD605400BBCC85 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D210527CD605400BBCC85 /* Poppins-SemiBold.ttf */; };
 		D95D210827CD606300BBCC85 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D210727CD606300BBCC85 /* Poppins-Medium.ttf */; };
 		D95D210A27CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95D210927CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf */; };
+		D97C3A3727DA599000B10CAF /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C3A3627DA599000B10CAF /* DrawerView.swift */; };
+		D97C3A3927DA5BD900B10CAF /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C3A3827DA5BD900B10CAF /* TabButton.swift */; };
 		D9A3DF2827B38E5600CCE64E /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A3DF2727B38E5600CCE64E /* ButtonView.swift */; };
 		D9C5A12127BC36CD002B12AE /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5A12027BC36CD002B12AE /* ListingView.swift */; };
 		D9C5A12327BC36E3002B12AE /* BigCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C5A12227BC36E3002B12AE /* BigCard.swift */; };
@@ -73,6 +76,7 @@
 		D91AB85827B4546A0005ACA0 /* LoginCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCard.swift; sourceTree = "<group>"; };
 		D91F7B2427C562B100E77E2C /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		D927069D27B4942100F53E2C /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		D93E3A3C27DA88F800D2AE35 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		D956A7ED27B6E61000AEBE9B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D956A7EF27B6F09500AEBE9B /* TitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleText.swift; sourceTree = "<group>"; };
 		D95D20E827CD1FE400BBCC85 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		D95D210527CD605400BBCC85 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		D95D210727CD606300BBCC85 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		D95D210927CD60EA00BBCC85 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
+		D97C3A3627DA599000B10CAF /* DrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		D97C3A3827DA5BD900B10CAF /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		D9A3DF2727B38E5600CCE64E /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		D9C5A12027BC36CD002B12AE /* ListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
 		D9C5A12227BC36E3002B12AE /* BigCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigCard.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 		020603FD27B18F1F0033C4F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D9FE5C9327D7E96A00B8C1FF /* SideMenu */,
 				D95D20E727CD1FDA00BBCC85 /* Tracking */,
 				D9142CB527CACDCC006C5079 /* Search */,
 				D9142CB227CA9173006C5079 /* Payments */,
@@ -226,15 +233,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		D91F7B2227C55EEC00E77E2C /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				02F1CEC527BD730600A25C3E /* OnboardingView.swift */,
-				026DF28C27BEC14F00F3BE00 /* OnboardingTransitionView.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		D91F7B2327C5629B00E77E2C /* Messages */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +283,16 @@
 				D9C5A12227BC36E3002B12AE /* BigCard.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D9FE5C9327D7E96A00B8C1FF /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D97C3A3627DA599000B10CAF /* DrawerView.swift */,
+				D97C3A3827DA5BD900B10CAF /* TabButton.swift */,
+				D93E3A3C27DA88F800D2AE35 /* MenuView.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +374,7 @@
 				D9FA581B27C53BDA00B3B50D /* ForgotPassView.swift in Sources */,
 				D9FA581927C53BC300B3B50D /* LoginView.swift in Sources */,
 				D9142CB727CACDDE006C5079 /* SearchView.swift in Sources */,
+				D97C3A3727DA599000B10CAF /* DrawerView.swift in Sources */,
 				D9FA581527C53B7000B3B50D /* LandingView.swift in Sources */,
 				D9FA581327C53B1600B3B50D /* SplashScreenView.swift in Sources */,
 				027DE62027B3100E005AFBEC /* HomeView.swift in Sources */,
@@ -373,6 +382,8 @@
 				D927069E27B4942100F53E2C /* NavBar.swift in Sources */,
 				020603FC27B18DB40033C4F3 /* LoginViewModel.swift in Sources */,
 				D9FA581E27C53D6200B3B50D /* SignupView.swift in Sources */,
+				D93E3A3D27DA88F800D2AE35 /* MenuView.swift in Sources */,
+				D97C3A3927DA5BD900B10CAF /* TabButton.swift in Sources */,
 				02684D1D27C7FCC70008F8BC /* ChooseView.swift in Sources */,
 				D9A3DF2827B38E5600CCE64E /* ButtonView.swift in Sources */,
 				D9E387C827C802F70036C009 /* BottomBar.swift in Sources */,
