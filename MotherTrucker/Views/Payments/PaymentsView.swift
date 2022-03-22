@@ -14,6 +14,7 @@ struct PaymentMethod: Hashable {
 }
 
 struct PaymentsView: View {
+    @Environment(\.presentationMode) var presentationMode
     var width, height: CGFloat
     var payments: [PaymentMethod] = [
         PaymentMethod(backgroundColor: Color(hex: 0x0941AE), paymnetName: "Chase Checking", balance: 120000),
@@ -22,43 +23,52 @@ struct PaymentsView: View {
     ]
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .center) {
-                AddPaymentMethod(width: width, height: height)
-                
-                ForEach(payments, id: \.self) { pmt in
-                    VStack {
-                        PaymentMethodView(width: width, height: height, backgroundColor: pmt.backgroundColor, paymentName: pmt.paymnetName, balance: pmt.balance)
-                            .shadow(radius: 5)
-                            .padding()
+        ZStack {
+            Color(hex: 0xE8E8E8)
+                .ignoresSafeArea()
+            
+            ScrollView {
+                VStack(alignment: .center) {
+                    AddPaymentMethod(width: width, height: height)
+                    
+                    ForEach(payments, id: \.self) { pmt in
+                        VStack {
+                            PaymentMethodView(width: width, height: height, backgroundColor: pmt.backgroundColor, paymentName: pmt.paymnetName, balance: pmt.balance)
+                                .shadow(radius: 5)
+                                .padding()
+                        }
                     }
+                    
+                    CreditCardView(width: width, height: height, balance: 2000000)
+                        .shadow(radius: 5)
+                        .padding(.top, 40)
                 }
-                
-                CreditCardView(width: width, height: height, balance: 2000000)
-                    .shadow(radius: 5)
-                    .padding(.top, 40)
             }
-            .offset(y: -25)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        //authentication.updatedValidation(success: false)
-                    } label: {
-                        Image(systemName: "list.bullet")
-                            .padding(.leading, 5.0)
-                            .padding(.bottom, 7.0)
-                            .padding(.top, 2.0)
-                            .imageScale(.large)
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        ZStack {
+                            Capsule()
+                                .fill(.black)
+                                .frame(width: 30, height: 2)
+                                .rotationEffect(.init(degrees: -45))
+                            Capsule()
+                                .fill(.black)
+                                .frame(width: 30, height: 2)
+                                .rotationEffect(.init(degrees: 45))
+                        }
                     }
                 }
                 
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .principal) {
                     Text("Payments")
                         .fontWeight(.bold)
-                        .font(.system(size: 35))
+                        .font(.system(size: 21))
                 }
             }
         }
+        .navigationBarColor(backgroundColor: .white)
     }
 }
 

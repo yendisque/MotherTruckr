@@ -203,9 +203,9 @@ struct NavigationBarModifier: ViewModifier {
         ZStack{
             content
             VStack {
-                GeometryReader { geometry in
+                GeometryReader { geo in
                     Color(self.backgroundColor ?? .clear)
-                        .frame(height: geometry.safeAreaInsets.top - 40)
+                        .frame(height: round(geo.size.width * 0.25))
                         .edgesIgnoringSafeArea(.top)
                     Spacer()
                 }

@@ -33,7 +33,7 @@ struct RoutingView: View {
                         .opacity(showingMenu ? 0 : 1)
                 }
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
